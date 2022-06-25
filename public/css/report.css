@@ -1,0 +1,211 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+    #customers td, #customers th {
+      border: 0.5px solid gray;
+      padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: none;}
+
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #191970;
+      color: white;
+    }
+    a{
+      text-decoration: none;
+    }
+    /* Dropdown Button */
+   .dropbtn {
+     background-color: #000C66;
+     color: white;
+     padding: 12px;
+     height: 80%;
+     font-size: 16px;
+     border: none;
+   }
+
+   /* The container <div> - needed to position the dropdown content */
+   .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+
+   /* Dropdown Content (Hidden by Default) */
+   .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f1f1f1;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1;
+   }
+
+   /* Links inside the dropdown */
+   .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+   }
+
+   /* Change color of dropdown links on hover */
+   .dropdown-content a:hover {background-color: #ddd;}
+
+   /* Show the dropdown menu on hover */
+   .dropdown:hover .dropdown-content {display: block;}
+
+   /* Change the background color of the dropdown button when the dropdown content is shown */
+   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+.counter{
+  font-size: 12px;
+  font-style: oblique;
+}
+a.box{
+  text-decoration: none;
+  color:black;
+}
+a#box{
+  text-decoration: none;
+  color:rgb(0, 0, 0);
+  background-color: snow;
+  margin-right: 0.5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 0.5%;
+
+}
+.col{
+  border-style: none;
+  background-color: inherit;
+}
+tr{
+  line-height: 14px;
+   min-height: 14px;
+   height: 14px;
+}
+/* .overview-boxes{
+  background-color: blue;
+  color: black; */
+
+a#box:hover{
+  background-color: blue;
+  color: white;
+}
+.home-content{
+  margin-bottom: 15px;
+}
+.container {
+  background-color: white;
+  height: 100%;
+  margin-bottom: 100px;
+}
+.layout {
+  background-color: #ADD8E6;
+  height: 100%;
+}
+
+
+
+
+
+
+
+.dropdown-container {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-container a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-container a:hover {
+  background-color: #ddd;
+}
+.page-footer {
+  text-align: center;
+   background-color:blue;
+   bottom:0;
+   left:0;
+   width: 100%;
+   position: fixed;
+   opacity: 95%;
+   color:white
+}
+.page-footer:hover{
+  color:white;
+  background-color: green;
+}
+@media print {
+  .container {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.btn-primary{
+  color: #fff;
+  /* background: #FCD900; */
+  background-color: #035397;
+  border-color: #0d6efd;
+  margin: 2%;
+  width: 100%;
+}
+
+.btn-secondary{
+  width: 100%;
+
+}.btn-danger{
+  width: 100%;
+}
+
+.card {
+  margin-top: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #E8630A;
+  /* background-color: #fff; */
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}
+/* media query to set desktop screen for card with margin-top 50px
+@media screen and (max-width: 992px) {
+  .card {
+    margin-top: 50px;
+  }
+} */
+
+.page-footer {
+  text-align: center;
+  background-color: #035397;
+  /* background-color: blue; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  opacity: 95%;
+  color: white;
+}
