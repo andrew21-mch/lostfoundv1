@@ -9,7 +9,7 @@
         color: white;
     }
     .card:hover{
-        padding: 8%;
+        padding: 6%;
 
     }
     .col-md-4{

@@ -90,9 +90,9 @@
         </form>
 
       </div>
-      @if(Session::has('user'))
+      @if(Session::has('role'))
         <div class="dropdown">
-         <button class="dropbtn">Hello {{Session::get('role')}}</button>
+         <button class="dropbtn" style="border-radius: 10px !important;">Hello {{Session::get('role')}}</button>
          <div class="dropdown-content">
            <a href="/logout">Logout</a>
            <a href="/profile_view/{{Session::get('userid')}}">Update</a>
