@@ -15,12 +15,12 @@ form{
 <div class="contain row m-auto">
     <div class="row justify-content-center">
         <div class="col-md-12 w-100">
-            <form action="/register" method="post">
+            <form action="admin/register" method="post" enctype="multipart/form-data">
                 @csrf
                     <div class="form-group row justify-content-center">
                         <div class="col-md-12">
                             <label for="name" >Full Names</label>
-                            <input id="fname" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="name" autofocus>
+                            <input id="fname" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                             @error('fname')
                                 <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@ form{
                         <label for="phone" >{{ __('Phone Number') }}</label>
                             <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
 
-                            @error('email')
+                            @error('phone')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -58,13 +58,13 @@ form{
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
                         <label for="subject" >{{ __('Subject') }}</label>
-                        <select class="form-control" name="subject">
+                        <select class="form-control" name="school">
                             <option value="">Select School</option>
                             @foreach($school ?? '' as $subject)
                             <option value="{{$subject->id}}">{{$subject->name}}</option>
                             @endforeach
                         </select>
-                            @error('subject')
+                            @error('school')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

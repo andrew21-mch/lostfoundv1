@@ -21,13 +21,16 @@
     <div class="row col-md-12">
         <div class="row cards" style="margin-top: 100px">
             <div class="card col-md-3">
-                Hello World
+                Schools
+                <h1>{{$schools}}</h1>
             </div>
             <div class="card col-md-4">
-                Hello World
+                Missing Items
+                <h1>{{$items}}</h1>
             </div>
             <div class="card col-md-3">
-                Hello World
+                Admins
+                <h1>{{$admins}}</h1>
             </div>
         </div>
     </div>

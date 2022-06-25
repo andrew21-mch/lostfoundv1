@@ -11,7 +11,7 @@
 
 <div class="contain row m-auto">
     <div class="row justify-content-center">
-        <form action="/" method="post" class="form"  style="margin-top: 100px">
+        <form action="/create/item" method="post" class="form"  style="margin-top: 100px">
             @csrf
             <h2 class="row justify-content-center">Add Missing Item</h2><br>
 
@@ -31,7 +31,9 @@
                     <input type="text" class="form-control" id="name" name="owner" placeholder="Optional" required>
                     <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
                 </div>
-                <div class="form-group col-md-10 mt-2">
+
+                <div class="row justify-content-center">
+                    <div class="form-group col-md-5 mt-2">
                     <label for="name">Item Category</label>
                     <select class="form-control" id="name" name="name" required>
                         <option value="">Select Category</option>
@@ -41,6 +43,18 @@
                     </select>
                     <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
                     </div>
+                    <div class="form-group col-md-5 mt-2">
+                        <label for="name">Hosting School</label>
+                        <select class="form-control" id="name" name="school" required>
+                            <option value="">Select School</option>
+                            @foreach($school as $cat)
+                            <option value="{{$cat->id}}">{{$cat->name}}</option>
+                            @endforeach
+                        </select>
+                        <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
+                        </div>
+                </div>
+                
                 <div class="form-group col-md-10 mt-2">
                     <label for="name">Image</label>
                     <input type="file" class="form-control" id="name" name="img" placeholder="chose File" required>

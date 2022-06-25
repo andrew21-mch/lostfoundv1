@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view::share('admin',DB::table('admins')->get());
+        view::share('admins',DB::table('admins')->count());
         view::share('school',DB::table('schools')->get());
         view::share('schools',DB::table('schools')->count());
         view::share('items',DB::table('items')->count());

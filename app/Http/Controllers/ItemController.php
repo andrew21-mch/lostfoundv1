@@ -10,7 +10,7 @@ class ItemController extends Controller
     public function create(Request $request){
       
       if($request->file('img')){
-          $file= $request->file('img');
+          $file = $request->file('img');
           $filename= date('YmdHi').$file->getClientOriginalName();
           $file-> move(public_path('/'), $filename);
           
