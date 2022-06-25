@@ -8,19 +8,19 @@
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Found</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Found.css" media="screen">
-<meta charset="UTF-8">
-<!--<title> Responsiive Admin Dashboard |!-->
-<link rel="stylesheet" href="{{URL::asset('css/admin.css')}}">
-<!-- Boxicons CDN Link -->
-<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
-<link rel="stylesheet" href="{{URL::asset('css/report.css')}}">
-<link rel="stylesheet" href="{{URL::asset('css/index.css')}}">
-<link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Found.css" media="screen">
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard |!-->
+    <link rel="stylesheet" href="{{URL::asset('css/admin.css')}}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="{{URL::asset('css/report.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/index.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
@@ -30,16 +30,20 @@
                 <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="home.html" style="padding: 10px;">home</a></li>       
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="Found.html" style="padding: 10px;">Found</a></li>
+                    @if(Session::has('role'))
+                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/dashboard" style="padding: 10px;">Dashboard</a></li>       
+                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="logout" style="padding: 10px;">Logout</a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div class="cont" style="height: 70vh;">
+    <div class="cont" style="height: 75vh;">
         @yield('content')
     </div>
 
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <footer class="text-center text-lg-start bg-light text-muted" style="margin-top: 7%">
         <!-- Section: Social media -->
         <section
         class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">

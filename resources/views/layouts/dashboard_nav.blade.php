@@ -38,7 +38,7 @@
           </a>
         </li>
         <li>
-          <a href="/register">
+          <a href="/addItem">
             <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
             <span class="links_name">Add Items</span>
           </a>
@@ -100,7 +100,7 @@
        </div>
     @endif
     </nav>
-        <div class="container" >
+        <div class="contain" >
            @yield('content')
          </div>
     <footer class="text-center text-lg-start bg-light text-muted">
