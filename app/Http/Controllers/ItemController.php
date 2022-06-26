@@ -49,7 +49,8 @@ class ItemController extends Controller
     }
 
     public function viewall(){
-      $items = Item::all();
-      return view('viewitems',['items'=>$items]);
+      $items = Item::join('schools', 'items.schoolid', 'schools.id')
+              ->get();
+      return view('viewitems',['itemss'=>$items]);
     }
 }
