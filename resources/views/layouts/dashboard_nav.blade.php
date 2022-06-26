@@ -15,8 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-  {{-- @if(Session::get('role')=='school') --}}
-
+  @if(Session::get('role')=='admin')
   <div class="sidebar">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
@@ -96,14 +95,88 @@
         </form>
 
       </div>
-      @if(Session::has('role'))
-        <div class="dropdown">
-         <button class="dropbtn" style="border-radius: 10px !important;">Hello {{Session::get('role')}}</button>
-         <div class="dropdown-content">
-           <a href="/logout">Logout</a>
-           <a href="/profile_view/{{Session::get('userid')}}">Update</a>
+        @if(Session::has('role'))
+          <div class="dropdown">
+          <button class="dropbtn" style="border-radius: 10px !important;">Hello {{Session::get('role')}}</button>
+          <div class="dropdown-content">
+            <a href="/logout">Logout</a>
+            <a href="/profile_view/{{Session::get('userid')}}">Update</a>
+          </div>
+        </div>
+        @endif
+
+       @elseif(Session::get('role')=='school')
+       <div class="sidebar">
+         <div class="logo-details">
+           <i class='bx bxl-c-plus-plus'></i>
+           <span class="logo_name">LAF</span>
          </div>
+           <ul class="nav-links">
+             @if(Session::has('role'))
+             <li>
+               <a href="#">
+                 <i class='bx bx-grid-alt' ></i>
+                 <span class="admin_name">Hello {{Session::get('role')}}</span>
+               </a>
+             </li>
+             @endif
+             <li>
+               <a href="/dashboard">
+                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <span class="links_name">Dashboard</span>
+               </a>
+             </li>
+             </li>
+             <li>
+               <a href="/addItem">
+                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <span class="links_name">Add Items</span>
+               </a>
+             </li>
+             <li>
+               <a href="/create/category">
+                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <span class="links_name">Add Category</span>
+               </a>
+             </li>
+             <li>
+               <a href="/viewall">
+                 <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
+                 </i>
+                 <span class="links_name">View Items</span>
+               </a>
+     
+             </li>
+             <li class="log_out">
+               <a href="/logout">
+                 <i class='bx bx-log-out'></i>
+                 <span class="links_name">Log out</span>
+               </a>
+             </li>
+           </ul>
        </div>
+       <section class="home-section">
+         <nav>
+           <div class="sidebar-button">
+             <i class='bx bx-menu sidebarBtn'></i>
+             <span class="dashboard">Dashboard</span>
+           </div>
+           <div class="search-box">
+             <form class="" action="/search" method="get">
+               <input type="text" name="search" placeholder="Search" style="height:40px">
+               <button type="submit" class='bx bx-search' style="border-style:none;"></button>
+             </form>
+     
+           </div>
+           @if(Session::has('role'))
+             <div class="dropdown">
+              <button class="dropbtn" style="border-radius: 10px !important;">Hello {{Session::get('role')}}</button>
+              <div class="dropdown-content">
+                <a href="/logout">Logout</a>
+                <a href="/profile_view/{{Session::get('userid')}}">Update</a>
+              </div>
+            </div>
+            @endif
     @endif
     </nav>
         <div class="contain" >
@@ -135,7 +208,7 @@
                 Useful links
                 </h6>
                 <p>
-                <a href="#!" class="text-reset">Contact Us</a>
+                <a href="/contact" class="text-reset">Contact Us</a>
                 </p>
                 <p>
                 <a href="#!" class="text-reset">About Us</a>

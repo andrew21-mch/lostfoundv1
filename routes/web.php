@@ -32,6 +32,7 @@ Route::view('/found', 'found');
 Route::view('/create/category', 'categorycreate');
 Route::view('/create/school', 'schoolcreate');
 Route::view('/dashboard', 'dashboard');
+Route::view('/contact', 'contact');
 
 // Admin
 Route::post('/admin/register', [AuthController::class, 'register']);

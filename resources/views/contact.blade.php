@@ -21,30 +21,25 @@
     <link rel="stylesheet" href="{{URL::asset('css/index.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body class="u-body u-xl-mode">
-    <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
-        <nav class="navbar navbar-expand-lg">
-            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">Lost and Found</p>
-            <div class="u-custom-menu u-nav-container">
-                <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px;">home</a></li>       
-                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/found" style="padding: 10px;">Found</a></li>
-                    @if(Session::has('role'))
-                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/dashboard" style="padding: 10px;">Dashboard</a></li>       
-                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="logout" style="padding: 10px;">Logout</a></li>
-                    @endif
-                </ul>
-            </div>
-        </nav>
-    </header>
+</head>
+<body class="u-body u-xl-mode">
+  <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
+      <nav class="navbar navbar-expand-lg">
+          <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">Lost and Found</p>
+          <div class="u-custom-menu u-nav-container">
+              <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px;">home</a></li>       
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/found" style="padding: 10px;">Found</a></li>
+                  @if(Session::has('role'))
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/dashboard" style="padding: 10px;">Dashboard</a></li>       
+                  <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="logout" style="padding: 10px;">Logout</a></li>
+                  @endif
+              </ul>
+          </div>
+      </nav>
+  </header>
 
-    <div class="cont" style="height: 100vh;">
-        @yield('content')
-    </div>
-
-    <!--Section: Contact v.2-->
-<section class="row mb-4 cont" style="margin: auto; background-color:antiquewhite; padding-bottom: 3%;">
+  <section class="row mb-4 cont" style="margin: auto; background-color:antiquewhite; padding-bottom: 3%;">
 
     <!--Section heading-->
     <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
@@ -125,11 +120,12 @@
         <div class="col-md-3 text-center">
             <ul class="list-unstyled mb-0">
                 <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Cameroon Bamenda, Bambili, CM</p>
+                    <p>San Francisco, CA 94126, USA</p>
                 </li>
 
-                <p><i class="fas fa-phone me-3"></i> + 237 672769636</p>
-                <p><i class="fas fa-print me-3"></i> + 237 234 567 89</p>
+                <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                    <p>+ 01 234 567 89</p>
+                </li>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
                     <p>contact@mdbootstrap.com</p>
