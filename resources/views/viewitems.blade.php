@@ -23,8 +23,8 @@
             @if(count($itemss))
             @foreach($itemss as $item)
             <div class="card col-md-3">
-                <h1>{{$item->name}}</h1>
-                <p>{{$item->school}}</p>
+                <h3>{{$item->itemname}}</h3>
+                <p>{{$item->name}}<br>{{$item->description}}</p>
             </div>
             @endforeach
 

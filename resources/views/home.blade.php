@@ -1,70 +1,53 @@
 @extends('layouts.nav')
 @section('content')
-<style>
-    .container{
-        margin: 20px 10px 10px 20px;
-        width: 100%;
-        /* margin: 0; */
-        /* height: 100vh; */
-    }
-</style>
-<div class="container">
-<!-- Carousel wrapper -->
+<div class="cr">
+  <div class="row justify-content-center m-5">
+    <p class="m-auto" style="text-align: center">Welcome to Lost And Found
+    A platform where you can easily find your lost items and report lost Items
+ </p> 
+    <button class="btn btn-danger col-md-3 mt-3" style="background-color: rgba(42, 127, 79, 0.655); border-color: transparent">Find</button>
+  </div>
 <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true"
-        aria-label="Slide 1"></button>
-      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-  
-    <!-- Inner -->
-    <div class="carousel-inner rounded-5 shadow-4-strong">
-      <!-- Single item -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    </ol>
+    
+      @if($items)
+      <div class="carousel-inner">
+      @foreach($itemss as $item)
       <div class="carousel-item active">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100"
-          alt="Sunset Over the City" />
+        <img class="d-block w-75 m-auto" src="images/{{$item->image_url}}"src="{{URL::asset('images/3.jpeg')}}" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Name</h5>
+          <p>Description</p>
         </div>
       </div>
-  
-      <!-- Single item -->
-      <div class="carousel-item">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100"
-          alt="Canyon at Nigh" />
+      
+      @endforeach
+    </div>
+      @else
+
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{URL::asset('images/4.jpeg')}}" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-  
-      <!-- Single item -->
-      <div class="carousel-item">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100"
-          alt="Cliff Above a Stormy Sea" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5 style="color: black">Name</h5>
+          <p>Description</p>
         </div>
       </div>
     </div>
-    <!-- Inner -->
-  
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+    @endif
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
 </div>
-  <!-- Carousel wrapper -->
 
 
 

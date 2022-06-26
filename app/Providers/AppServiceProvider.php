@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         view::share('school',DB::table('schools')->get());
         view::share('schools',DB::table('schools')->count());
         view::share('items',DB::table('items')->count());
+        view::share('itemss',DB::table('items')->get());
         view::share('category',DB::table('categories')->count());
         view::share('categories',DB::table('categories')->get());
         // Paginator::useBootstrap();

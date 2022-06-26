@@ -9,20 +9,25 @@ class ItemController extends Controller
 {
     public function create(Request $request){
       
-      if($request->file('img')){
-          $file = $request->file('img');
+      if($request->file('image')){
+          $file = $request->file('image');
           $filename= date('YmdHi').$file->getClientOriginalName();
-          $file-> move(public_path('/'), $filename);
+          $file-> move(public_path('/images/'), $filename);
           
           $item = new Item();
-          $item->name = $request->name;
+          $item->itemname = $request->name;
           $item->category_id = $request->category;
           $item->owner_name = $request->owner;
           $item->description = $request->desc;
           $item->image_url = $filename;
-          $item->school_id = $request->schoolid;
+          $item->schoolid = $request->school;
 
-        return $item;
+        if($item->save()){
+          return "Saved";
+        }
+        else{
+          return "Oops!";
+        }
       }
 
       
@@ -36,7 +41,7 @@ class ItemController extends Controller
         
     }
     function find(Request $request){
-        $searched_item = Item::where('name', 'like', '%'.$request->input('item').'%')
+        $searched_item = Item::where('itemname', 'like', '%'.$request->input('item').'%')
         ->orWhere('category_id', 'like', '%'.$request->input('item').'%')
         ->orWhere('owner_name', 'like', '%'.$request->input('item').'%')
         ->orWhere('description', 'like', '%'.$request->input('item').'%')
