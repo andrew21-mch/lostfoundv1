@@ -16,7 +16,14 @@
         <div class="col-md-12 w-100">
                     <form method="POST" action="/admin/login" class="form" >
                         @csrf
-
+                        @if(Session::has("message"))
+                        <div class="alert alert-success">
+                            <span>
+                                {{Session::get("message")}}
+                            </span>
+                            {{Session::forget("message")}}
+                        </div>
+                        @endif
                         <div class="form-group row justify-content-center">
 
                             <div class="col-md-12">

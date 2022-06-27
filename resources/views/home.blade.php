@@ -1,5 +1,6 @@
 @extends('layouts.nav')
 @section('content')
+<?php $title = "Home" ?>
 <div class="cr">
   <div class="row justify-content-center m-5">
     <p class="m-auto" style="text-align: center">Welcome to Lost And Found

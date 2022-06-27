@@ -17,6 +17,15 @@ form{
         <div class="col-md-12 w-100">
             <form action="admin/register" method="post" enctype="multipart/form-data">
                 @csrf
+                        @if(Session::has("message"))
+                        <div class="alert alert-danger">
+                            <span>
+                                {{Session::get("message")}}
+                            </span>
+                            {{Session::forget("message")}}
+                        </div>
+                        @endif
+                @csrf
                     <div class="form-group row justify-content-center">
                         <div class="col-md-12">
                             <label for="name" >Full Names</label>
@@ -56,7 +65,7 @@ form{
                     </div>
 
                     <div class="form-group row justify-content-center">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mt-2">
                         <label for="subject" >{{ __('Subject') }}</label>
                         <select class="form-control" name="school">
                             <option value="">Select School</option>
@@ -72,6 +81,18 @@ form{
 
                         </div>
                         <div class="col-md-6 mt-2">
+                            <label for="auth_key" >{{ __('Key') }}</label>
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="auth_key" required>
+                                @error('auth_key')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row justify-content-center">
+                        <div class="col-md-6 mt-2">
                             <label for="password" >{{ __('Password') }}</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
                                 @error('password')
@@ -80,6 +101,17 @@ form{
                                     </span>
                                 @enderror
                         </div>
+
+                        <div class="col-md-6 mt-2">
+                            <label for="repeat" >{{ __('Repeat Password') }}</label>
+                            <input id="repeat" type="password" class="form-control @error('password') is-invalid @enderror" name="repeat" required>
+                                @error('repeat')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+    
+                            </div>
                     </div>
 
                     <div class="form-group row justify-content-center ">

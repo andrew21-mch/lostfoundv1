@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
+<html style="font-size: 18px;">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Found</title>
+    <title>home</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="Found.css" media="screen">
     <meta charset="UTF-8">
@@ -25,7 +25,8 @@
   <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
         <nav class="navbar navbar-expand-lg">
-            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">Lost and Found</p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">
+                Lost and Found</p>
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px;">home</a></li>       

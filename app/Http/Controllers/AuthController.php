@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Token;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -13,26 +14,50 @@ class AuthController extends Controller
 {
     //
     function register(Request $request){
+
         $request->validate([
             'name' => 'required',
             'password' => 'required',
-            'email' => 'required|email|unique:admins'
+            'email' => 'required|email|unique:admins',
+            // 'repeat'=>'required',
+            // 'auth_key'=>'required',
+            // 'school'=>'required'
         ]);
-       $admin = new Admin();
-       $admin->name = $request->name;
-       $admin->email = $request->email;
-       $admin->phone = $request->phone;
-       $admin->password = Hash::make($request->password);
-       $admin->schoolid = $request->school;
 
-       if($admin->save()){
-        $request->session()->put('message', 'Account created, Please login');
-        return redirect('login')->with("message", 'Account created, Please login');
-       }
-       else{
-        return redirect('register')->with("message", 'Something Went Wrong, Please Try again');
-       }
-    } 
+        //check for auth key in the database
+        $auth = Token::where('token', $request->auth_key)->first();
+        if($auth){
+            $auth_key = $auth->token;
+        }
+        else{
+            $request->session()->put('message', 'Invalid Auth Key');
+            return redirect('register');
+        }
+        //check if auth key and password are valid
+        if($request->password == $request->repeat && $request->auth_key == $auth_key){
+
+            $admin = new Admin();
+            $admin->name = $request->name;
+            $admin->email = $request->email;
+            $admin->phone = $request->phone;
+            $admin->password = Hash::make($request->password);
+            $admin->schoolid = $request->school;
+
+
+            if($admin->save()){
+                $request->session()->put('message', 'Account created, Please login');
+                return redirect('login');
+            }
+            else{
+                $request->session()->put('message', 'Something went wrong');
+                return redirect('register');
+            }
+        }
+        else{
+            $request->session()->put('message', 'Invalid Auth Key or Unmatched Passwords');
+            return redirect('register');
+        }
+    }
 
     function login(Request $request){
         $request->validate([
@@ -44,6 +69,7 @@ class AuthController extends Controller
         if(count($admin) > 0){
             if(!Hash::check($request->input, $admin[0]->password)){
                 $request->session()->put('admin',$admin[0]->email);
+                $request->session()->put('userid',$admin[0]->id);
                 $request->session()->put('role',$admin[0]->role);
                 return redirect('dashboard');
             }
@@ -77,4 +103,9 @@ class AuthController extends Controller
           return redirect('/');
         }
       }
+
+    public function viewaccount($id){
+        $account = Admin::find($id);
+        return view('updateAccount', ['accountdetails'=>$account]);
+    }
 }

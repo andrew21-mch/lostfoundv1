@@ -33,11 +33,13 @@ Route::view('/create/category', 'categorycreate');
 Route::view('/create/school', 'schoolcreate');
 Route::view('/dashboard', 'dashboard');
 Route::view('/contact', 'contact');
+Route::view('/updateAccount', 'updateAccount');
 
 // Admin
 Route::post('/admin/register', [AuthController::class, 'register']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
 
 //Items
 Route::get('/search', [ItemController::class, 'find']);
