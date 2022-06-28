@@ -31,7 +31,8 @@
         </style>
         @if(Session::get('role') == 'admin')
         <div class="justify-content-center m-auto">
-            @if (Session::has('message'))
+            <div class="row col-md-12">
+                @if (Session::has('message'))
                 <div class="alert alert-success">
                     <span>
                         {{Session::get('message')}}
@@ -39,7 +40,6 @@
                     {{Session::forget('message')}}
                 </div>
             @endif
-            <div class="row col-md-12">
                 <div class="row cards" style="margin-top: 100px">
                     <a class="card col-md-2">
                         Schools
