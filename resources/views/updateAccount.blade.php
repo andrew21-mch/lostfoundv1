@@ -19,6 +19,7 @@
                 <div class="alert alert-danger">
                     <span>{{Session::get('message')}}</span>
                 </div>
+                {{Session::forget("message")}}
             @endif
             <div class="row justify-content-center mt-2">
                 <div class="form-group col-md-10 mt-2">
@@ -27,8 +28,8 @@
                     <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
                 </div>
                 <div class="form-group col-md-10 mt-2">
-                    <label for="name">Email</label>
-                    <input type="text" class="form-control" id="name" name="desc" value="{{$accountdetails->email}}" required>
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="{{$accountdetails->email}}" required>
                     <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
                     </div>
                 <div class="form-group col-md-10 mt-2">

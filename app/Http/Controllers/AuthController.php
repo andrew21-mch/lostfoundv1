@@ -97,19 +97,22 @@ class AuthController extends Controller
     }
 
     public function update(Request $request){
-        if(Admin::where('admins.id', $request->id)
-        ->update([
-            'email', $request->get('email'),
-            'password', Hash::make($request->get('password')),
-            'name', $request->get('name')
-        ])){
-            $request->session()->put('message', "Account succesfuly updated");
-            return redirect('dashboard');
-        }
-        else{
-            $request->session()->put('message', "Something went wrong");
-            return redirect()->back();
-        }
+        $admin = Admin::find($request->id);
+        if($admin){
+            if($admin->update([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'password'=>Hash::make($request->get('password'))
+            ])){
+                $request->session()->put('message', "Account succesfuly updated");
+                return redirect('dashboard');
+            }
+            else{
+                $request->session()->put('message', "Something went wrong");
+                return redirect()->back();
+            }
+            }
+            
     }
 
     //Logout

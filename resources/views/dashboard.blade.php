@@ -36,6 +36,7 @@
                     <span>
                         {{Session::get('message')}}
                     </span>
+                    {{Session::forget('message')}}
                 </div>
             @endif
             <div class="row col-md-12">
