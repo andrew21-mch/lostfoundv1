@@ -11,10 +11,15 @@
 
 <div class="contain row m-auto">
     <div class="row justify-content-center">
-        <form action="/create/item" method="post" class="form"  style="margin-top: 100px" enctype="multipart/form-data">
+        <form action="/admin/update" method="post" class="form"  style="margin-top: 100px">
             @csrf
             <h2 class="row justify-content-center">Update Account Details</h2><hr>
-
+            <input type="hidden" value="{{$accountdetails->id}}" name="id">
+            @if (Session::has('message'))
+                <div class="alert alert-danger">
+                    <span>{{Session::get('message')}}</span>
+                </div>
+            @endif
             <div class="row justify-content-center mt-2">
                 <div class="form-group col-md-10 mt-2">
                     <label for="name">Full Name</label>

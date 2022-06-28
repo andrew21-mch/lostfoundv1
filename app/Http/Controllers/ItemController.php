@@ -24,10 +24,12 @@ class ItemController extends Controller
           $item->schoolid = $request->school;
 
         if($item->save()){
-          return "Saved";
+          $request->session()->put('message', 'Item Successfully Added');
+          return redirect('dashboard');
         }
         else{
-          return "Oops!";
+          $request->session()->put('message', 'Something went wrong please try ag');
+          return redirect()->back();
         }
       }
 
@@ -36,6 +38,7 @@ class ItemController extends Controller
     }
 
     function update(Request $request){
+      
         
     }
     function delete($id){

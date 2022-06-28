@@ -40,6 +40,7 @@ Route::view('/admin/addkey', 'addKey');
 // Admin
 Route::post('/admin/register', [AuthController::class, 'register']);
 Route::post('/admin/login', [AuthController::class, 'login']);
+Route::post('/admin/update', [AuthController::class, 'update']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
 
