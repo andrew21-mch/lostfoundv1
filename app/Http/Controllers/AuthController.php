@@ -133,4 +133,9 @@ class AuthController extends Controller
         }
 
     }
+
+    public function viewkeys(){
+        $keys = Token::all();
+        return view('viewtokens', ['tokens'=>$keys]);
+    }
 }

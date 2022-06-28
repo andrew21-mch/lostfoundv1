@@ -42,7 +42,10 @@ Route::post('/admin/register', [AuthController::class, 'register']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
+
+//access tokens
 Route::Post('/admin/addkey', [AuthController::class, 'addKey']);
+Route::get('/admin/viewkeys', [AuthController::class, 'viewkeys']);
 
 //Items
 Route::get('/search', [ItemController::class, 'find']);
