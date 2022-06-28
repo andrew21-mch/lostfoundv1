@@ -47,7 +47,7 @@
         </nav>
     </header>
 
-    <div class="cont" style="height: 100vh;">
+    <div class="cont">
         @yield('content')
     </div>
 
