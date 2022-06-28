@@ -2,12 +2,13 @@
 @section('content')
 
 <style>
-   form{
+   .form{
     border-style: groove;
     border-color: transparent;
     background-color:white;
     padding: 4%;
     max-width: 500px;
+    min-width: 250px;
    }
 </style>
 
