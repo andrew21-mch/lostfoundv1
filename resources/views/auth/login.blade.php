@@ -2,9 +2,9 @@
 @section('content')
 
 <style>
-   .form{
-    border-style: groove;
-    border-color: transparent;
+  .form{
+    border-style: solid;    
+    border-color: gray;
     background-color:white;
     padding: 4%;
     margin-top: 20px;
