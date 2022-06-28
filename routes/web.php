@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SchoolController;
 use App\Models\Token;
 
@@ -63,3 +64,7 @@ route::post('/create/school', [SchoolController::class, 'create']);
 
 //Category
 Route::post('/create/category', [CategoryController::class, 'create']);
+
+//Contact
+Route::post('/contact', [ContactController::class, 'send']);
+Route::get('/viewmessages', [ContactController::class, 'view']);

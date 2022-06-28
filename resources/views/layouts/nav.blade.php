@@ -64,35 +64,32 @@
 
         <!--Grid column-->
         <div class="col-md-7 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+            <form id="contact-form" name="contact-form" action="/contact" method="POST">
+                @csrf
 
-                <!--Grid row-->
                 <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="md-form mb-0">
                             <label for="name" class="">Your name</label>
                             <input type="text" id="name" name="name" class="form-control">
-                            
                         </div>
                     </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
+                </div>
+                <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                 <label for="phone" class="">Phone</label>
+                                <input type="text" id="phone" name="phone" class="form-control">
+                               
+                            </div>
+                        </div>
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                             <label for="email" class="">Your email</label>
                             <input type="text" id="email" name="email" class="form-control">
-                            
                         </div>
                     </div>
-                    <!--Grid column-->
-
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
@@ -102,36 +99,24 @@
                         </div>
                     </div>
                 </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
                 <div class="row">
-
-                    <!--Grid column-->
                     <div class="col-md-12">
 
                         <div class="md-form">
                             <label for="message">Your message</label>
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                           
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>                           
                         </div>
-
                     </div>
                 </div>
-                <!--Grid row-->
-
             </form>
-
             <div class="text-center text-md-left">
                 <a class="btn btn-primary col-md-7" onclick="document.getElementById('contact-form').submit();">Send</a>
             </div>
             <div class="status"></div>
         </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
         <div class="col-md-3 text-center">
             <ul class="list-unstyled mb-0">
+                <img src="images/logo.PNG" alt="logo" class="logo" style="width:150px">
                 <li><i class="fas fa-map-marker-alt fa-2x"></i>
                     <p>Cameroon Bamenda, Bambili, CM</p>
                 </li>
@@ -140,14 +125,11 @@
                 <p><i class="fas fa-print me-3"></i> + 237 234 567 89</p>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@mdbootstrap.com</p>
+                    <p>contact@lostfound.com</p>
                 </li>
             </ul>
         </div>
-        <!--Grid column-->
-
     </div>
-
 </section>
 <!--Section: Contact v.2-->
 

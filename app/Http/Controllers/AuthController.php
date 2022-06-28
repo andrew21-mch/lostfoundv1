@@ -13,7 +13,8 @@ class AuthController extends Controller
 
 {
     //register user
-    function register(Request $request){
+    function register(Request $request)
+    {
 
         $request->validate([
             'name' => 'required',
@@ -26,15 +27,14 @@ class AuthController extends Controller
 
         //check for auth key in the database
         $auth = Token::where('token', $request->auth_key)->first();
-        if($auth){
+        if ($auth) {
             $auth_key = $auth->token;
-        }
-        else{
+        } else {
             $request->session()->put('message', 'Invalid Auth Key');
             return redirect('register');
         }
         //check if auth key and password are valid
-        if($request->password == $request->repeat && $request->auth_key == $auth_key){
+        if ($request->password == $request->repeat && $request->auth_key == $auth_key) {
 
             $admin = new Admin();
             $admin->name = $request->name;
@@ -44,117 +44,116 @@ class AuthController extends Controller
             $admin->schoolid = $request->school;
 
 
-            if($admin->save()){
+            if ($admin->save()) {
                 $request->session()->put('message', 'Account created, Please login');
                 return redirect('login');
-            }
-            else{
+            } else {
                 $request->session()->put('message', 'Something went wrong');
                 return redirect('register');
             }
-        }
-        else{
+        } else {
             $request->session()->put('message', 'Invalid Auth Key or Unmatched Passwords');
             return redirect('register');
         }
     }
 
     //Login user
-    function login(Request $request){
+    function login(Request $request)
+    {
+        //validate the form data
         $request->validate([
             'password' => 'required',
             'email' => 'required'
         ]);
 
         $admin = $this->findByEmail($request->email);
-        if(count($admin) > 0){
-            if(Hash::check($request->password, $admin[0]->password)){
-                $request->session()->put('admin',$admin[0]->email);
+        if (count($admin) > 0) {
+            if (Hash::check($request->password, $admin[0]->password)) {
+                $request->session()->put('admin', $admin[0]->email);
                 $request->session()->put('userid', $admin[0]->id);
                 $request->session()->put('role', $admin[0]->role);
                 return redirect('dashboard');
-            }
-            else{
+            } else {
                 $request->session()->put('message', 'Invalid username of password!');
-                return redirect('login'); 
-            }   
-        }
-        else{
+                return redirect('login');
+            }
+        } else {
             $request->session()->put('error', 'Invalid username of password!');
             return redirect('login')->with('errorss', 'No Such Username or password');
         }
-        
     }
 
     //find user by email
-    function findByEmail($email){
-        if(DB::table('admins')->where('email', $email)){
+    function findByEmail($email)
+    {
+        if (DB::table('admins')->where('email', $email)) {
             return DB::table('admins')->where('email', $email)->get();
-        }
-        else{
+        } else {
             return null;
         }
     }
 
-    public function update(Request $request){
+    //Update user account
+    public function update(Request $request)
+    {
         $admin = Admin::find($request->id);
-        if($admin){
-            if($admin->update([
-                'name'=>$request->name,
-                'email'=>$request->email,
-                'password'=>Hash::make($request->get('password'))
-            ])){
+        if ($admin) {
+            if ($admin->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->get('password'))
+            ])) {
                 $request->session()->put('message', "Account succesfuly updated");
                 return redirect('dashboard');
-            }
-            else{
+            } else {
                 $request->session()->put('message', "Something went wrong");
                 return redirect()->back();
             }
-            }
-            
+        }
     }
 
-    //Logout
-    function logout(){
-        if(Session::has('admin')){
-
-          Session::pull('admin');
-          Session::flush();
-
-          return redirect('/');
+    public function logout(Request $request){ 
+        //check if user is logged in
+        if ($request->session()->has('admin')) {
+            $request->session()->forget('admin');
+            $request->session()->forget('userid');
+            $request->session()->forget('role');
+            return redirect('login');
+        } else {
+            return redirect('login');
         }
-      }
+    }
 
-    public function viewaccount($id){
+    //get all users
+    public function viewaccount($id)
+    {
         $account = Admin::find($id);
-        return view('updateAccount', ['accountdetails'=>$account]);
+        return view('updateAccount', ['accountdetails' => $account]);
     }
 
 
 
     //Create Registration key For other admins to user
-    public function addKey(Request $request){
+    public function addKey(Request $request)
+    {
         $request->validate([
-            'key'=>'required'
+            'key' => 'required'
         ]);
 
         $key = new Token();
         $key->token = $request->key;
-        if($key->save()){
+        if ($key->save()) {
             $request->session()->put('message', "Token Successfully Created");
             return redirect('dashboard');
-        }
-
-        else{
+        } else {
             $request->session()->put('message', "Error creating token, check again");
             return redirect()->back();
         }
-
     }
 
-    public function viewkeys(){
+    public function viewkeys()
+    {
         $keys = Token::all();
-        return view('viewtokens', ['tokens'=>$keys]);
+        return view('viewtokens', ['tokens' => $keys]);
     }
 }

@@ -41,17 +41,22 @@
             @endif
             <div class="row col-md-12">
                 <div class="row cards" style="margin-top: 100px">
-                    <a class="card col-md-3">
+                    <a class="card col-md-2">
                         Schools
                         <h1>{{$schools}}</h1>
                     </a>
-                    <a class="card col-md-4" href="/viewall">
+                    <a class="card col-md-3" href="/viewall">
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>
                     <a class="card col-md-3">
                         Admins
                         <h1>{{$admins}}</h1>
+                    </a>
+
+                    <a class="card col-md-2" href="/viewmessages">
+                        Messages
+                        <h1>{{$messages}}</h1>
                     </a>
                 </div>
             </div>

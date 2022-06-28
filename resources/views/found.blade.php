@@ -1,10 +1,10 @@
 @extends('layouts.nav')
 @section('content')
-<style>
+{{-- <style>
   .cont{
     margin-bottom: 100%;
   }
-</style>
+</style> --}}
 <div class="cont mt-4">
   <div class="carousel-inner">
   <div class="carousel-item active">
