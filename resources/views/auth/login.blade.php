@@ -9,6 +9,7 @@
     padding: 4%;
     max-width: 500px;
     min-width: 250px;
+    margin-top: 100px;
    }
 </style>
 
@@ -16,6 +17,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 w-100">
                     <form method="POST" action="/admin/login" class="form" >
+                        <h2 class="m-auto" style="text-align: center">LOGIN</h2><hr>
                         @csrf
                         @if(Session::has("message"))
                         <div class="alert alert-success">
