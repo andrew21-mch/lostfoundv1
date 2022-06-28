@@ -29,10 +29,9 @@
   <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
         <nav class="navbar navbar-expand-lg">
-            
             <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">
                 Lost and Found</p>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:gray">
+                <button class="navbar-toggler  navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="u-custom-menu u-nav-container" id="navbarSupportedContent">
