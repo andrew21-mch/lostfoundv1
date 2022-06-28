@@ -29,11 +29,12 @@
   <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
         <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            
             <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-palette-4-dark-2 u-text-1">
                 Lost and Found</p>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color:gray">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="u-custom-menu u-nav-container" id="navbarSupportedContent">
                 <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px;">home</a></li>       
