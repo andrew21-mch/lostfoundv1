@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -37,7 +38,13 @@ class ItemController extends Controller
     function update(Request $request){
         
     }
-    function delete(Request $request){
+    function delete($id){
+      if($item = DB::table('items')
+      ->where('itemid', $id)){
+        if($item->delete()){
+          return redirect()->back()->with('message', "Item Deleted");
+        }
+      }
         
     }
     function find(Request $request){

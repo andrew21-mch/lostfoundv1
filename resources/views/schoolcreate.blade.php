@@ -9,7 +9,7 @@
 </style>
 <div class="contain row m-auto">
     <div class="row justify-content-center">
-  <form action="/create/school" method="post" class="form"  style="margin-top: 100px">
+  <form action="/create/school" method="post" class="form"  style="margin-top: 100px; margin-bottom: 100px;">
     @csrf
     <h1 class="row justify-content-center">Add School</h1><br>
 

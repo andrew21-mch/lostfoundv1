@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 
 {
-    //
+    //register user
     function register(Request $request){
 
         $request->validate([
@@ -59,6 +59,7 @@ class AuthController extends Controller
         }
     }
 
+    //Login user
     function login(Request $request){
         $request->validate([
             'password' => 'required',
@@ -67,15 +68,15 @@ class AuthController extends Controller
 
         $admin = $this->findByEmail($request->email);
         if(count($admin) > 0){
-            if(!Hash::check($request->input, $admin[0]->password)){
+            if(Hash::check($request->password, $admin[0]->password)){
                 $request->session()->put('admin',$admin[0]->email);
-                $request->session()->put('userid',$admin[0]->id);
-                $request->session()->put('role',$admin[0]->role);
+                $request->session()->put('userid', $admin[0]->id);
+                $request->session()->put('role', $admin[0]->role);
                 return redirect('dashboard');
             }
             else{
-                $request->session()->put('error', 'Invalid username of password!');
-                return redirect('login')->with('errorss', 'No Such Username or password'); 
+                $request->session()->put('message', 'Invalid username of password!');
+                return redirect('login'); 
             }   
         }
         else{
@@ -85,6 +86,7 @@ class AuthController extends Controller
         
     }
 
+    //find user by email
     function findByEmail($email){
         if(DB::table('admins')->where('email', $email)){
             return DB::table('admins')->where('email', $email)->get();
@@ -94,6 +96,7 @@ class AuthController extends Controller
         }
     }
 
+    //Logout
     function logout(){
         if(Session::has('admin')){
 
@@ -107,5 +110,27 @@ class AuthController extends Controller
     public function viewaccount($id){
         $account = Admin::find($id);
         return view('updateAccount', ['accountdetails'=>$account]);
+    }
+
+
+
+    //Create Registration key For other admins to user
+    public function addKey(Request $request){
+        $request->validate([
+            'key'=>'required'
+        ]);
+
+        $key = new Token();
+        $key->token = $request->key;
+        if($key->save()){
+            $request->session()->put('message', "Token Successfully Created");
+            return redirect('dashboard');
+        }
+
+        else{
+            $request->session()->put('message', "Error creating token, check again");
+            return redirect()->back();
+        }
+
     }
 }

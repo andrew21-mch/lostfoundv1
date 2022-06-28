@@ -7,7 +7,7 @@ form{
     background-color:white;
     padding: 4%;
     margin-top: 20px;
-    max-width: 500px;
+    max-width: 600px;
     min-width: 250px;
    }
 </style>

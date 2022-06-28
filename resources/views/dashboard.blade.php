@@ -7,18 +7,26 @@
                 color: white;
                 text-decoration: none;
             }
+
             .card{
                 padding: 50px;
                 margin: 2%;
+                border-radius: 3%;
                 background-color: rgba(26, 11, 77, 0.76);
                 color: white;
             }
-            .card:hover{
-                padding: 6%;
+            a.card:hover{
+                padding: 5%;
+                color: white;
+                text-decoration: none;
+                text-align: center;
 
             }
             .col-md-4{
                 text-align: center;
+            }
+            .col-md-12{
+                margin-bottom: 100px;
             }
         </style>
         @if(Session::get('role') == 'admin')
@@ -29,7 +37,7 @@
                         Schools
                         <h1>{{$schools}}</h1>
                     </a>
-                    <a class="card col-md-4">
+                    <a class="card col-md-4" href="/viewall">
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>

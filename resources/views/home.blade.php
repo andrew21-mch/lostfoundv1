@@ -18,11 +18,11 @@
       @if($items)
       <div class="carousel-inner">
       @foreach($itemss as $item)
-      <div class="carousel-item active">
-        <img class="d-block w-75 m-auto" src="images/{{$item->image_url}}"src="{{URL::asset('images/3.jpeg')}}" alt="First slide">
+      <div class="carousel-item {{$item->itemid==6? 'active' : ''}}">
+        <img class="d-block w-75 m-auto" src="images/{{$item->image_url}}" alt="" style="height: 50vh">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Name</h5>
-          <p>Description</p>
+          <h5>{{$item->itemname}}</h5>
+          <p>{{$item->description}}</p>
         </div>
       </div>
       
@@ -39,11 +39,11 @@
       </div>
     </div>
     @endif
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="background-color: gray;">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="background-color: gray;">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>

@@ -68,6 +68,16 @@
           </a>
 
         </li>
+
+        <li>
+          <a href="/admin/addkey">
+            <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
+            </i>
+            <span class="links_name">Add Key</span>
+          </a>
+
+        </li>
+
         <li>
           <a href="/viewlogs">
             <i class='bx bx-pie-chart-alt-2' ></i>

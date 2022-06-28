@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SchoolController;
+use App\Models\Token;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,18 +35,21 @@ Route::view('/create/school', 'schoolcreate');
 Route::view('/dashboard', 'dashboard');
 Route::view('/contact', 'contact');
 Route::view('/updateAccount', 'updateAccount');
+Route::view('/admin/addkey', 'addKey');
 
 // Admin
 Route::post('/admin/register', [AuthController::class, 'register']);
 Route::post('/admin/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
+Route::Post('/admin/addkey', [AuthController::class, 'addKey']);
 
 //Items
 Route::get('/search', [ItemController::class, 'find']);
 Route::get('/view/{id}', [ItemController::class, 'view']);
 Route::get('/viewall', [ItemController::class, 'viewall']);
 Route::post('/create/item', [ItemController::class, 'create']);
+Route::get('/delete/{id}', [ItemController::class, 'delete']);
 
 //Schools
 route::view('schools', 'viewschools');
