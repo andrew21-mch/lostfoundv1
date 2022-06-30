@@ -6,7 +6,7 @@
     <p class="m-auto" style="text-align: center">Welcome to Lost And Found
     A platform where you can easily find your lost items and report lost Items
  </p> 
-    <button class="btn btn-danger col-md-3 mt-3" style="background-color: rgba(42, 127, 79, 0.655); border-color: transparent">Find</button>
+    <a class="btn btn-danger col-md-3 mt-3" style="background-color: rgba(42, 127, 79, 0.655); border-color: transparent" href="/found">Find</a>
   </div>
 <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

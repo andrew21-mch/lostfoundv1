@@ -1,18 +1,17 @@
 @extends('layouts.nav')
 @section('content')
-    <div class="container">
-        <div class="row">
+        <div class="row m-2 col-md-8 m-auto">
+            <h2>{{$itemd[0]->itemname}}:{{$itemd[0]->itemid}} Details</h2><hr>
             <div class="row col-md-4 m-1">
-                <h3>{{$itemd[0]->itemname}}</h3>
+                <h3 class="m-3">{{$itemd[0]->itemname}}</h3>
                 <p> School: {{$itemd[0]->name}} <br> 
                     Description: {{$itemd[0]->description}} <br>
-                    Contact: {{$itemd[0]->contact}} <a href="wa.me/{{$itemd[0]->contact}}" ><i class="fa fa-whatsap"></i></a>
+                    <a href="https://wa.me/{{$itemd[0]->contact}}" class="btn btn-success col-md-5 m-1" style="a:hover{color: white; background-color:yellow}">Contact</a> </a>
                 </p>
 
             </div>
-            <div class="row col-md-4">
-                <img src="../images/{{$itemd[0]->image_url}}"  width="50px" height="50px">
+            <div class="row col-md-6 m-1">
+                <img src="../images/{{$itemd[0]->image_url}}" style="height: 70%">
             </div>
         </div>
-    </div>
 @endsection

@@ -26,11 +26,11 @@
     <!-- JavaScript Bundle with Popper -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        nav a{
+        a{
             color: white; text-decoration: none;
         }
         a:hover{
-            color: white; text-decoration: none;
+            color: white; text-decoration: none; padding: 2%; border-radius: 5%; background-color: yellow
         }
     </style>
   </head>
@@ -118,7 +118,7 @@
                 </div>
             </form>
             <div class="text-center text-md-left">
-                <a class="btn btn-primary col-md-7" onclick="document.getElementById('contact-form').submit();">Send</a>
+                <a class="btn btn-primary col-md-4 w-50" onclick="document.getElementById('contact-form').submit();">Send</a>
             </div>
             <div class="status">
                 @if (Session::has('message'))
@@ -176,13 +176,13 @@
                 Features
                 </h6>
                 <p>
-                <a href="#!" class="text-reset">Find Lost Items</a>
+                <a href="/found" class="text-reset">Find Lost Items</a>
                 </p>
                 <p>
                 <a href="/contact" class="text-reset">Contact Us</a>
                 </p>
                 <p>
-                <a href="#!" class="text-reset">Request Item</a>
+                <a href="/contact" class="text-reset">Request Item</a>
                 </p>
             </div>
             <!-- Grid column -->
@@ -206,7 +206,7 @@
         </div>
         </section>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright:
+      © 2022 Copyright @lostAndFound
     </div>
     <!-- Copyright -->
   </footer>
