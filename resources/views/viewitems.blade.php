@@ -36,7 +36,7 @@
                 <h3>{{$item->itemname}} {{$item->itemid }}</h3>
                 <p>{{$item->name}}<br>{{$item->description}}</p>
                 <div class="row col-md-12">
-                    <a href="/viewall" class="btn btn-warning col-md-5 m-1">view</a>
+                    <a href="/view/{{$item->id}}" class="btn btn-warning col-md-5 m-1">view</a>
                     <a href="/delete/{{$item->itemid}}" class="btn btn-danger col-md-5 m-1">delete</a>
                 </div>
                 

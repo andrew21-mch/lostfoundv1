@@ -25,6 +25,14 @@
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
     <!-- JavaScript Bundle with Popper -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav a{
+            color: white; text-decoration: none;
+        }
+        a:hover{
+            color: white; text-decoration: none;
+        }
+    </style>
   </head>
   <body class="u-body u-xl-mode">
     <header class="u-clearfix u-header u-sticky u-sticky-e780 u-white u-header" id="sec-fee1">
@@ -36,7 +44,7 @@
             </button>
             <div class="u-custom-menu u-nav-container" id="navbarSupportedContent">
                 <ul class="u-custom-font u-font-source-sans-pro u-nav u-spacing-20 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px;">home</a></li>       
+                    <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/" style="padding: 10px; ">home</a></li>       
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/found" style="padding: 10px;">Found</a></li>
                     @if(Session::has('role'))
                     <li class="u-nav-item"><a class="u-border-active-palette-1-base u-border-hover-palette-1-base u-button-style u-nav-link u-text-active-palette-4-dark-2 u-text-grey-90 u-text-hover-palette-4-dark-2" href="/dashboard" style="padding: 10px;">Dashboard</a></li>       
@@ -112,7 +120,16 @@
             <div class="text-center text-md-left">
                 <a class="btn btn-primary col-md-7" onclick="document.getElementById('contact-form').submit();">Send</a>
             </div>
-            <div class="status"></div>
+            <div class="status">
+                @if (Session::has('message'))
+                    <div class="alert alert-success">
+                        <span>
+                            {{Session::get('message')}}
+                        </span>
+                    </div>
+
+                @endif
+            </div>
         </div>
         <div class="col-md-3 text-center">
             <ul class="list-unstyled mb-0">

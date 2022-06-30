@@ -31,6 +31,7 @@ Route::view('/login', 'auth.login');
 Route::view('/register', 'auth.register');
 Route::view('/addItem', 'addItem');
 Route::view('/found', 'found');
+Route::view('/item', 'item');
 Route::view('/create/category', 'categorycreate');
 Route::view('/create/school', 'schoolcreate');
 Route::view('/dashboard', 'dashboard');

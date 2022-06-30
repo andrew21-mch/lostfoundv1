@@ -18,7 +18,7 @@
       @if($items)
       <div class="carousel-inner">
       @foreach($itemss as $item)
-      <div class="carousel-item {{$item->itemid==6? 'active' : ''}}">
+      <div class="carousel-item {{$item->itemid>=6? 'active' : ''}}">
         <img class="d-block w-75 m-auto" src="images/{{$item->image_url}}" alt="" style="height: 50vh">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{$item->itemname}}</h5>
