@@ -14,7 +14,14 @@
   <form action="/create/category" method="post" class="form"  style="margin-top: 100px">
     @csrf
     <h1 class="row justify-content-center">Add Category</h1><br>
-
+    @if(Session::has("message"))
+                        <div class="alert alert-success">
+                            <span>
+                                {{Session::get("message")}}
+                            </span>
+                            {{Session::forget("message")}}
+                        </div>
+                        @endif
       <div class="row justify-content-center mt-2">
         <div class="form-group col-md-10 mt-2">
           <label for="name">Category Name</label>

@@ -65,6 +65,14 @@
         @else
         <div class="justify-content-center ">
             <div class="row col-md-12 m-auto">
+                @if(Session::has("message"))
+                        <div class="alert alert-success">
+                            <span>
+                                {{Session::get("message")}}
+                            </span>
+                            {{Session::forget("message")}}
+                        </div>
+                        @endif
                 <div class="row cards" style="margin-top: 100px">
                     <a class="card col-md-3" href="/viewschools">
                         Schools

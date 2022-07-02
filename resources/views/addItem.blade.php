@@ -14,7 +14,14 @@
         <form action="/create/item" method="post" class="form"  style="margin-top: 100px" enctype="multipart/form-data">
             @csrf
             <h2 class="row justify-content-center">Add Missing Item</h2><br>
-
+            @if(Session::has("message"))
+                        <div class="alert alert-success">
+                            <span>
+                                {{Session::get("message")}}
+                            </span>
+                            {{Session::forget("message")}}
+                        </div>
+                        @endif
             <div class="row justify-content-center mt-2">
                 <div class="form-group col-md-10 mt-2">
                     <label for="name">Item Name</label>
