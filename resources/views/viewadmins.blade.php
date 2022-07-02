@@ -34,8 +34,8 @@
                             @if($item->role == 'school')
                         School President @else General Admin @endif</td>
                         <td>
-                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-25">View</a> 
-                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger w-25 ">Delete</@auth
+                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-50">View</a> 
+                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger w-50 ">Delete</@auth
                                 
                             @endauth>  
                         </td>
