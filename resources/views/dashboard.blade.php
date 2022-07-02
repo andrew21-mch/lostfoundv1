@@ -49,7 +49,7 @@
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>
-                    <a class="card col-md-3">
+                    <a class="card col-md-3" href="/viewadmins">
                         Admins
                         <h1>{{$admins}}</h1>
                     </a>
@@ -74,6 +74,11 @@
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>
+                    <a class="card col-md-5" href="/viewadmins">
+                        Admins
+                        <h1>{{$admins}}</h1>
+                    </a>
+
                 </div>
             </div>
 
