@@ -166,4 +166,9 @@ class AuthController extends Controller
             return redirect()->back();
         }
     }
+
+    public function viewadmins(){
+        $admins = Admin::all();
+        return view('/viewadmins', ['admins' => $admins]);
+    }
 }
