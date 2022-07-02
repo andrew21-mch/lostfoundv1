@@ -28,7 +28,7 @@
                     </div>
                 <div class="form-group col-md-10 mt-2">
                     <label for="name">Owner</label>
-                    <input type="text" class="form-control" id="name" name="owner" placeholder="Optional" required>
+                    <input type="text" class="form-control" id="name" name="owner" placeholder="Optional">
                     <span class="text-danger">@error ('name') {{ $message }} @enderror</span>
                 </div>
 
