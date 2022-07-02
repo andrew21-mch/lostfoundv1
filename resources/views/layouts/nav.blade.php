@@ -133,16 +133,17 @@
         </div>
         <div class="col-md-3 text-center">
             <ul class="list-unstyled mb-0">
-                <img src="images/logo.PNG" alt="logo" class="logo" style="width:150px">
+                <img src="../images/logo.PNG" alt="logo" class="logo" style="width:150px">
                 <li><i class="fas fa-map-marker-alt fa-2x"></i>
                     <p>Cameroon Bamenda, Bambili, CM</p>
                 </li>
-
-                <p><i class="fas fa-phone me-3"></i> + 237 672769636</p>
-                <p><i class="fas fa-print me-3"></i> + 237 234 567 89</p>
+                <p>
+                    <p><i class="fas fa-phone me-3"></i> + 237 653038940</p>
+                    <p><i class="fas fa-print me-3"></i> + 237 652204022</p>
 
                 <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@lostfound.com</p>
+                    <p>gastonmupbaah23@gamil.com
+                    </p>
                 </li>
             </ul>
         </div>
@@ -196,7 +197,7 @@
                 <p><i class="fas fa-home me-3"></i> Cameroon Bamenda Bambili CM</p>
                 <p>
                 <i class="fas fa-envelope me-3"></i>
-                contactus@lostfound.com
+                gastonmupbaah23@gamil.com
                 </p>
                 <p><i class="fas fa-phone me-3"></i> + 237 672726274</p>
                 <p><i class="fas fa-print me-3"></i> + 237 680989878</p>
@@ -206,7 +207,7 @@
         </div>
         </section>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright @lostAndFound
+      © 2022 Copyright Community Solutions
     </div>
     <!-- Copyright -->
   </footer>

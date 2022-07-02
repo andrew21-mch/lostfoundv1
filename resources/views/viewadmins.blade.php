@@ -20,7 +20,7 @@
                     <th>Phone</th>
                     <th>school</th>
                     <th>Role</th>
-                    <th colspan="6">Action</th>
+                    @if(Session::get('role') == 'admin')<th colspan="6">Action</th>@endif
                 </tr>
                 </thead>
                 <tbody>
@@ -31,14 +31,18 @@
                         <td>{{$item->phone}}</td>
                         <td>{{$item->schoolname}}</td>
                         <td>
-                            @if($item->role == 'school')
-                        School President @else General Admin @endif</td>
+                        @if($item->role == 'school')
+                            School President 
+                        @else 
+                            General Admin 
+                        @endif
+                    </td>
+                    @if(Session::get('role') == 'admin')
                         <td>
                             <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary col-md-3">View</a> 
-                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger col-md-4 ">Delete</@auth
-                                
-                            @endauth>  
+                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger col-md-5 ">Delete</a>  
                         </td>
+                    @endif
                         
                     </tr>
                     @endforeach

@@ -66,15 +66,15 @@
         <div class="justify-content-center ">
             <div class="row col-md-12 m-auto">
                 <div class="row cards" style="margin-top: 100px">
-                    <a class="card col-md-5" href="/viewschools">
+                    <a class="card col-md-3" href="/viewschools">
                         Schools
                         <h1>{{$schools}}</h1>
                     </a>
-                    <a class="card col-md-5" href="/viewall">
+                    <a class="card col-md-4" href="/viewall">
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>
-                    <a class="card col-md-5" href="/viewadmins">
+                    <a class="card col-md-3" href="/viewadmins">
                         Admins
                         <h1>{{$admins}}</h1>
                     </a>

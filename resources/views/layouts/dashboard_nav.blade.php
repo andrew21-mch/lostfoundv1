@@ -61,6 +61,12 @@
           </a>
         </li>
         <li>
+          <a href="/viewschools">
+            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+            <span class="links_name">View Schools</span>
+          </a>
+        </li>
+        <li>
           <a href="/viewall">
             <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
             </i>
@@ -159,6 +165,12 @@
                </a>
              </li>
              <li>
+              <a href="/viewschools">
+                <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                <span class="links_name">View Schools</span>
+              </a>
+            </li>
+             <li>
                <a href="/viewall">
                  <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
                  </i>
@@ -230,13 +242,13 @@
                 <a href="/contact" class="text-reset">Contact Us</a>
                 </p>
                 <p>
-                <a href="#!" class="text-reset">About Us</a>
+                {{-- <a href="" class="text-reset">About Us</a> --}}
                 </p>
                 <p>
-                <a href="#!" class="text-reset">Found Items</a>
+                <a href="/found" class="text-reset">Found Items</a>
                 </p>
                 <p>
-                <a href="#!" class="text-reset">Help</a>
+                <a href="/contact" class="text-reset">Help</a>
                 </p>
             </div>
             <!-- Grid column -->
@@ -250,17 +262,17 @@
                 <p><i class="fas fa-home me-3"></i> Cameroon Bamenda Bambili</p>
                 <p>
                 <i class="fas fa-envelope me-3"></i>
-                contactus@lostfound.com
+                gastonmupbaah23@gamil.com
                 </p>
-                <p><i class="fas fa-phone me-3"></i> + 237 672769636</p>
-                <p><i class="fas fa-print me-3"></i> + 237 234 567 89</p>
+                <p><i class="fas fa-phone me-3"></i> + 237 653038940</p>
+                <p><i class="fas fa-print me-3"></i> + 237 652204022</p>
             </div>
             </div>
 
         </div>
         </section>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-      © 2022 Copyright: LostAndFound
+      © 2022 Copyright: Community Solutions
     </div>
     <!-- Copyright -->
   </footer>

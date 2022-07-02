@@ -8,7 +8,7 @@
  </p> 
     <a class="btn btn-danger col-md-3 mt-3" style="background-color: rgba(42, 127, 79, 0.655); border-color: transparent" href="/found">Find</a>
   </div>
-<div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+{{-- <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -49,7 +49,7 @@
     </a>
   </div>
 </div>
-
+ --}}
 
 
 @endsection
