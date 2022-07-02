@@ -104,7 +104,7 @@ class AuthController extends Controller
                 'password' => Hash::make($request->get('password'))
             ])) {
                 $request->session()->put('message', "Account succesfuly updated");
-                return redirect('dashboard');
+                return redirect()->back();
             } else {
                 $request->session()->put('message', "Something went wrong");
                 return redirect()->back();
@@ -128,8 +128,8 @@ class AuthController extends Controller
     public function viewaccount($id)
     {
         $account = Admin::where('id', $id)
-        ->join('schools', 'admin.schoolid', 'schools.schoolid')
-        ->get();
+        ->join('schools', 'admins.schoolid', 'schools.schoolid')
+        ->first();
         return view('updateAccount', ['accountdetails' => $account]);
     }
 
