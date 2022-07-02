@@ -26,7 +26,7 @@
                     @foreach ($tokens as $token)
                         <tr>
                             <td>{{$token->token}}</td>
-                            <td><a class="btn btn-danger" href="/deletekey/{{$token->id}}">Delete</a></td>
+                            <td><a class="btn btn-danger" href="/admin/deletekey/{{$token->id}}">Delete</a></td>
                         </tr>
                     @endforeach
                     
