@@ -5,6 +5,12 @@
     <div class="row col-md-12 justify-content-center m-auto"> 
         <div class="col-md-12" style="margin-top:80px; margin-bottom: 200px">
             <h2 style="text-align: center">Admins</h2>
+            @if (Session::has('message'))
+            <div class="alert alert-warning">
+                <span>{{Session::get('message')}}
+            </div>
+            {{Session::forget("message")}}
+            @endif
 
             <table class="table table-striped" >
                 <thead>
@@ -28,9 +34,8 @@
                             @if($item->role == 'school')
                         School President @else General Admin @endif</td>
                         <td>
-                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-25">Edit</a> 
-                            <a href="/admin/view/{{$item->id}}" class="btn btn-secondary w-25">View</a>
-                            <a href="/admin/delete/{{$item->id}}" class="btn btn-danger w-25 ">Delete</@auth
+                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-25">View</a> 
+                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger w-25 ">Delete</@auth
                                 
                             @endauth>  
                         </td>

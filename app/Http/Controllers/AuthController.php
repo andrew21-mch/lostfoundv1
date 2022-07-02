@@ -171,4 +171,60 @@ class AuthController extends Controller
         $admins = Admin::all();
         return view('/viewadmins', ['admins' => $admins]);
     }
+
+    public function deleteadmin($id){
+        $admin = Admin::find($id);
+        if ($admin->delete()) 
+        {
+            Session::put('message', "Account succesfuly Deleted");
+            return redirect()->back();
+        } else {
+            Session::put('message', "Something went wrong");
+            return redirect()->back();
+        }
+    }
+
+    public function editadmin($id){
+        $admin = Admin::find($id);
+        return view('/editadmin', ['admin' => $admin]);
+    }
+
+    public function updateadmin(Request $request){
+        $admin = Admin::find($request->id);
+        if ($admin) {
+            if ($admin->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->get('password'))
+            ])) {
+                Session::put('message', "Account succesfuly updated");
+                return redirect()->back();
+            } else {
+                Session::put('message', "Something went wrong");
+                return redirect()->back();
+            }
+        }
+    }
+
+    public function resetuser($id){
+        if(Session::get('role') == 'admin'){
+            $admin = Admin::find($id);
+            if ($admin) {
+                if ($admin->update([
+                    'password' => Hash::make('school')
+                ])) {
+                    Session::put('message', "Account succesfuly reset");
+                    return redirect()->back();
+                } else {
+                    Session::put('message', "Something went wrong");
+                    return redirect()->back();
+                }
+            }
+            else{
+                Session::put('message', "You don't have the privilege to do this");
+                return redirect()->back();
+            }
+        }
+        
+    }
 }

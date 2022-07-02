@@ -46,6 +46,9 @@ Route::post('/admin/update', [AuthController::class, 'update']);
 Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
 Route::get('/viewadmins', [AuthController::class, 'viewadmins']);
+Route::get('/admin/editadmin/{id}', [AuthController::class, 'editadmin']);
+Route::get('/admin/deleteadmin/{id}', [AuthController::class, 'deleteadmin']);
+Route::get('/admin/reset/{id}', [AuthController::class, 'resetuser']);
 
 //access tokens
 Route::Post('/admin/addkey', [AuthController::class, 'addKey']);
