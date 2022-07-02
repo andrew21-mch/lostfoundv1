@@ -11,8 +11,15 @@
     margin-top: 100px;
   }
   .card{
+    background-color: rgb(80, 57, 134);
+    color: white;
     margin: 2%;
     padding: 3%;
+  }
+  .card:hover{
+    color: blueviolet;
+    background-color: wheat;
+    padding: 4%;
   }
 
   a{

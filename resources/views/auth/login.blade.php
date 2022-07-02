@@ -9,7 +9,7 @@
     padding: 4%;
     margin-top: 20px;
     margin-bottom: 100px;
-    max-width: 700px;
+    max-width: 500px;
     min-width: 260px;
    }
 </style>

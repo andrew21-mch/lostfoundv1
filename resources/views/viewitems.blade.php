@@ -29,6 +29,7 @@
                     {{Session::get('message')}}
                 </span>
             </div>
+            {{Session::forget('message')}}
             @endif
             @if(count($itemss))
             @foreach($itemss as $item)

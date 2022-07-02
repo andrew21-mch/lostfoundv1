@@ -41,7 +41,7 @@
                 </div>
             @endif
                 <div class="row cards" style="margin-top: 100px">
-                    <a class="card col-md-2" href="/viewschools">
+                    <a class="card col-md-2">
                         Schools
                         <h1>{{$schools}}</h1>
                     </a>
@@ -49,7 +49,7 @@
                         Missing Items
                         <h1>{{$items}}</h1>
                     </a>
-                    <a class="card col-md-3" href="/viewadmins">
+                    <a class="card col-md-3">
                         Admins
                         <h1>{{$admins}}</h1>
                     </a>

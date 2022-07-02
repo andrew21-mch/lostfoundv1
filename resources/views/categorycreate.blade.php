@@ -11,7 +11,7 @@
 
 <div class="contain row m-auto">
     <div class="row justify-content-center">
-  <form action="/" method="post" class="form"  style="margin-top: 100px">
+  <form action="/create/category" method="post" class="form"  style="margin-top: 100px">
     @csrf
     <h1 class="row justify-content-center">Add Category</h1><br>
 
