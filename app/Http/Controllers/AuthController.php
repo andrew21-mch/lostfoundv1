@@ -156,4 +156,14 @@ class AuthController extends Controller
         $keys = Token::all();
         return view('viewtokens', ['tokens' => $keys]);
     }
+
+    public function deletekey($id)
+    {
+        $key = Token::find($id);
+        if ($key->delete()) {
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
 }

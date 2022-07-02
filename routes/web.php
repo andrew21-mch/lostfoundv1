@@ -49,6 +49,7 @@ Route::get('/profile_view/{id}', [AuthController::class, 'viewaccount']);
 //access tokens
 Route::Post('/admin/addkey', [AuthController::class, 'addKey']);
 Route::get('/admin/viewkeys', [AuthController::class, 'viewkeys']);
+Route::get('/admin/deletekey/{id}', [AuthController::class, 'deletekey']);
 
 //Items
 Route::get('/search', [ItemController::class, 'find']);
