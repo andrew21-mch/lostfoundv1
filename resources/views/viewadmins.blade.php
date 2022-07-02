@@ -19,7 +19,7 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Role</th>
-                    <th colspan="4">Action</th>
+                    <th colspan="6">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,7 @@
                             @if($item->role == 'school')
                         School President @else General Admin @endif</td>
                         <td>
-                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary col-md-4">View</a> 
+                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary col-md-3">View</a> 
                             <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger col-md-4 ">Delete</@auth
                                 
                             @endauth>  
