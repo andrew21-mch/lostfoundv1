@@ -24,14 +24,15 @@
                         <td>{{$item->phone}}</td>
                         {{-- <td>{{$item->schoolname}}</td> --}}
 
-                        <td>@if({{$item->role}} == 'school')
+                        <td>
+                            @if($item->role == 'school')
                         School President @else General Admin @endif</td>
                         <td>
-                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary">Edit</a>   
-                        </td>
-                        <td>
-                            <button class="btn btn-secondary">View</button>
-                            <button class="btn btn-danger ">Delete</button>
+                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-25">Edit</a> 
+                            <a class="btn btn-secondary w-25">View</a>
+                            <a class="btn btn-danger w-25 ">Delete</@auth
+                                
+                            @endauth>  
                         </td>
                         
                     </tr>
