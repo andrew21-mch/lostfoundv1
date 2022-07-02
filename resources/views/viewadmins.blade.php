@@ -12,17 +12,23 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>Role</th>
                     <th colspan="4">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                         @foreach ($admins as $item) 
                     <tr>
-                        <td>{{$item}}</td>
-                        {{-- <td>{{$item->name}}</td>
+                        <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->phone}}</td>
-                        <td>{{$item->message}}</td> --}}
+                        {{-- <td>{{$item->schoolname}}</td> --}}
+
+                        <td>@if({{$item->role}} == 'school')
+                        School President @else General Admin @endif</td>
+                        <td>
+                            <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary">Edit</a>   
+                        </td>
                         <td>
                             <button class="btn btn-secondary">View</button>
                             <button class="btn btn-danger ">Delete</button>
