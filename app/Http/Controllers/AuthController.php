@@ -127,7 +127,9 @@ class AuthController extends Controller
     //get all users
     public function viewaccount($id)
     {
-        $account = Admin::find($id);
+        $account = Admin::where('id', $id)
+        ->join('schools', 'admin.schoolid', 'schools.schoolid')
+        ->get();
         return view('updateAccount', ['accountdetails' => $account]);
     }
 
@@ -168,7 +170,8 @@ class AuthController extends Controller
     }
 
     public function viewadmins(){
-        $admins = Admin::all();
+        $admins = Admin::join('schools', 'schools.schoolid', 'admins.schoolid')
+        ->get();
         return view('/viewadmins', ['admins' => $admins]);
     }
 

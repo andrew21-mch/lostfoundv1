@@ -48,7 +48,7 @@
                         <select class="form-control" id="name" name="school" required>
                             <option value="">Select School</option>
                             @foreach($school as $cat)
-                            <option value="{{$cat->id}}">{{$cat->name}}</option>
+                            <option value="{{$cat->schoolid}}">{{$cat->schoolname}}</option>
                             @endforeach
                         </select>
                         <span class="text-danger">@error ('name') {{ $message }} @enderror</span>

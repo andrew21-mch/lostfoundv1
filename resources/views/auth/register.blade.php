@@ -72,7 +72,7 @@
                         <select class="form-control" name="school">
                             <option value="">Select School</option>
                             @foreach($school ?? '' as $subject)
-                            <option value="{{$subject->id}}">{{$subject->name}}</option>
+                            <option value="{{$subject->schoolid}}">{{$subject->schoolname}}</option>
                             @endforeach
                         </select>
                             @error('school')

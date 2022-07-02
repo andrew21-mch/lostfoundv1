@@ -40,7 +40,8 @@
         @foreach($school as $item)
             <a class="card col-md-3">
                 <div class="card-body">
-                    {{$item->name}}
+                    {{$item->schoolid}}
+                    {{$item->schoolname}}
                     {{$item->office_location}} <br>
 
                     {{-- <div class="row mt-2">

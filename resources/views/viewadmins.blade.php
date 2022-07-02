@@ -18,6 +18,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
+                    <th>school</th>
                     <th>Role</th>
                     <th colspan="6">Action</th>
                 </tr>
@@ -28,8 +29,7 @@
                         <td>{{$item->name}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->phone}}</td>
-                        {{-- <td>{{$item->schoolname}}</td> --}}
-
+                        <td>{{$item->schoolname}}</td>
                         <td>
                             @if($item->role == 'school')
                         School President @else General Admin @endif</td>

@@ -60,13 +60,13 @@ class ItemController extends Controller
       }
     public function view($id){
       $item = Item::where('itemid',$id)
-            ->join('schools', 'schools.id', 'items.schoolid')
+            ->join('schools', 'schools.schoolid', 'items.schoolid')
             ->get();
       return view('item', ['itemd'=>$item]);
     }
 
     public function viewall(){
-      $items = Item::join('schools', 'items.schoolid', 'schools.id')
+      $items = Item::join('schools', 'items.schoolid', 'schools.schoolid')
               ->get();
       return view('viewitems',['itemss'=>$items]);
     }
