@@ -29,8 +29,8 @@
                         School President @else General Admin @endif</td>
                         <td>
                             <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary w-25">Edit</a> 
-                            <a class="btn btn-secondary w-25">View</a>
-                            <a class="btn btn-danger w-25 ">Delete</@auth
+                            <a href="/admin/view/{{$item->id}}" class="btn btn-secondary w-25">View</a>
+                            <a href="/admin/delete/{{$item->id}}" class="btn btn-danger w-25 ">Delete</@auth
                                 
                             @endauth>  
                         </td>
