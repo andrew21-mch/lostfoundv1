@@ -16,21 +16,22 @@ class SchoolController extends Controller
     public function create(Request $request){
         $valid = $request->validate([
             'name'=>'required',
-            'description'=>'required'
+            'desc'=>'required'
         ]);
         
         if($valid){
             $school = new School();
-            $school->name = $request->name;
-            $school->office_location = $request->description;
+            $school->schoolname = $request->name;
+            $school->office_location = $request->desc;
 
             if($school->save()){
-                return redirect('dashboard', 201);
+                $request->session()->put('message','School created successfully');
+                return redirect('dashboard');
             }
             else{
+                $request->session()->put('message','School creation failed');
                 return redirect('create/school');
             }
-            return $request->input();
         }
         else{
             return "Sorry";

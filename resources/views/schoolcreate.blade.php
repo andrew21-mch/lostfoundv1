@@ -23,8 +23,8 @@
 
       <div class="row justify-content-center mt-2">
         <div class="form-group col-md-10 mt-2" >
-          <label for="coef">School Location</label>
-          <input type="text" class="form-control" id="coef" name="coef" required >
+          <label for="desc">School Location</label>
+          <input type="text" class="form-control" id="desc" name="desc" required >
           @error ('coef')<span class="text-danger">{{ $message }}</span> @enderror
         </div>
       </div>
