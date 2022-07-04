@@ -49,6 +49,7 @@ Route::get('/viewadmins', [AuthController::class, 'viewadmins']);
 Route::get('/admin/editadmin/{id}', [AuthController::class, 'editadmin']);
 Route::get('/admin/deleteadmin/{id}', [AuthController::class, 'deleteadmin']);
 Route::get('/admin/reset/{id}', [AuthController::class, 'resetuser']);
+Route::get('/admin/deletemessage/{id}', [ContactController::class, 'delete']);
 
 //access tokens
 Route::Post('/admin/addkey', [AuthController::class, 'addKey']);

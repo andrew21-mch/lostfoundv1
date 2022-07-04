@@ -38,37 +38,46 @@
         </li>
         <li>
           <a href="/register">
-            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+            <i ><span class="iconify" data-icon="ri:admin-fill" style="color: white;"></span></i>
             <span class="links_name">Add Admins</span>
           </a>
         </li>
         <li>
           <a href="/addItem">
-            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+            <i ><span class="iconify" data-icon="fxemoji:whitemediumsquare"></span></i>
             <span class="links_name">Add Items</span>
           </a>
         </li>
         <li>
           <a href="/create/category">
-            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+            <i ><span class="iconify" data-icon="bx:category"></span></i>
             <span class="links_name">Add Category</span>
           </a>
         </li>
         <li>
           <a href="/create/school">
-            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+            <i ><span class="iconify" data-icon="fa6-solid:school-circle-check"></span></i>
             <span class="links_name">Add Schools</span>
           </a>
         </li>
         <li>
           <a href="/viewschools">
-            <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+          <i ><span class="iconify" data-icon="emojione-monotone:school"></span></span></i>
             <span class="links_name">View Schools</span>
           </a>
         </li>
         <li>
+          <a href="/viewmessages">
+            <i><span class="iconify" data-icon="typcn:messages"></span></i>
+            </i>
+            <span class="links_name">View Messages</span>
+          </a>
+
+        </li>
+        <li>
           <a href="/viewall">
-            <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
+            <i>
+             <span class="iconify" data-icon="carbon:data-view-alt"></span></i>
             </i>
             <span class="links_name">View Items</span>
           </a>
@@ -77,8 +86,7 @@
 
         <li>
           <a href="/admin/addkey">
-            <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
-            </i>
+            <i><span class="iconify" data-icon="et:key"></span></i>
             <span class="links_name">Add Key</span>
           </a>
 
@@ -86,7 +94,7 @@
 
         <li>
           <a href="/admin/viewkeys">
-            <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
+            <i><span class="iconify" data-icon="emojione:locked-with-key" style="color: white;"></span></i>
             </i>
             <span class="links_name">View Keys</span>
           </a>
@@ -147,37 +155,47 @@
              @endif
              <li>
                <a href="/dashboard">
-                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <i ><span class="iconify" data-icon="ant-design:dashboard-outlined"></span></i>
                  <span class="links_name">Dashboard</span>
                </a>
              </li>
              </li>
              <li>
                <a href="/addItem">
-                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <i ><span class="iconify" data-icon="fxemoji:whitemediumsquare"></span></i>
                  <span class="links_name">Add Items</span>
                </a>
              </li>
              <li>
                <a href="/create/category">
-                 <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                 <i ><span class="iconify" data-icon="bx:category-alt"></span></i>
                  <span class="links_name">Add Category</span>
                </a>
              </li>
              <li>
               <a href="/viewschools">
-                <i ><span class="iconify" data-icon="fa-solid:chalkboard-teacher" style="color: white;"></span></i>
+                <i ><span class="iconify" data-icon="emojione-monotone:school"></span></span></i>
                 <span class="links_name">View Schools</span>
               </a>
             </li>
+            <li>
+              <a href="/viewall">
+                <i>
+                 <span class="iconify" data-icon="carbon:data-view-alt"></span></i>
+                </i>
+                <span class="links_name">View Items</span>
+              </a>
+    
+            </li>
+
              <li>
-               <a href="/viewall">
-                 <i><span class="iconify" data-icon="noto:man-student-medium-dark-skin-tone" data-rotate="180deg" data-flip="vertical"></span></i>
-                 </i>
-                 <span class="links_name">View Items</span>
-               </a>
-     
-             </li>
+              <a href="/viewmessages">
+                <i><span class="iconify" data-icon="typcn:messages"></span></i>
+                </i>
+                <span class="links_name">View Messages</span>
+              </a>
+    
+            </li>
              <li class="log_out">
                <a href="/logout">
                  <i class='bx bx-log-out'></i>

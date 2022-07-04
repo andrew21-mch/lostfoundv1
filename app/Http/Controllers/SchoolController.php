@@ -50,6 +50,7 @@ class SchoolController extends Controller
     {
         $school = School::where('schools.schoolid' , $id);
         if($school){
+            
             if($school->delete()){
                 Session::put('message','School deleted successfully');
                 return redirect('viewschools');

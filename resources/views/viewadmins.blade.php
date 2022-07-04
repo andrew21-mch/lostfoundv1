@@ -40,7 +40,7 @@
                     @if(Session::get('role') == 'admin')
                         <td>
                             <a href="/admin/editadmin/{{$item->id}}" class="btn btn-primary col-md-3">View</a> 
-                            <a href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger col-md-5 ">Delete</a>  
+                            <a onclick="return confirm('are you sure you want to delete? ')" href="/admin/deleteadmin/{{$item->id}}" class="btn btn-danger col-md-5 " >Delete</a>  
                         </td>
                     @endif
                         

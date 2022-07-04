@@ -38,7 +38,7 @@
                 <p>{{$item->name}}<br>{{$item->description}}</p>
                 <div class="row col-md-12">
                     <a href="/view/{{$item->itemid}}" class="btn btn-warning col-md-5 m-1">view</a>
-                    <a href="/delete/{{$item->itemid}}" class="btn btn-danger col-md-5 m-1">delete</a>
+                    <a href="/delete/{{$item->itemid}}" class="btn btn-danger col-md-5 m-1" onclick="return confirm('Are you sure you want to delete this item, you can not undo this?? ')">delete</a>
                 </div>
                 
             </div>
@@ -54,4 +54,4 @@
 
 </div>
 
-@endsectionz
+@endsection

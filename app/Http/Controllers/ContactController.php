@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use Illuminate\Support\Facades\Session;
 
 class ContactController extends Controller
 {
@@ -35,6 +36,20 @@ class ContactController extends Controller
     {
         $messages = Message::all();
         return view('messages.viewmessages', ['received' => $messages]);
+    }
+
+    //delete contact
+    function delete($id)  
+    {
+        $message = Message::find($id);
+        if ($message->delete()) {
+            Session::put('message', 'Message deleted');
+            return redirect('viewmessages');
+        } else {
+            Session::put('message', 'Something went wrong');
+            return redirect('viewmessages');
+        }
+       
     }
 
 }
