@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\School;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+
 
 class SchoolController extends Controller
 {
@@ -42,5 +44,25 @@ class SchoolController extends Controller
     public function find(Request $request){
         $school = School::where('name','like','%'.$request->input('item').'%')->first();
         return view('viewschools',['foundschool'=>$school]);
+    }
+
+    public function delete($id)
+    {
+        $school = School::where('schools.schoolid' , $id);
+        if($school){
+            if($school->delete()){
+                Session::put('message','School deleted successfully');
+                return redirect('viewschools');
+            }
+            else{
+                Session::put('message','School deletion failed');
+                return redirect('viewschools');
+            }
+        }
+        else{
+            Session::put('message','School not found');
+            return redirect('viewschools');
+        }
+        
     }
 }

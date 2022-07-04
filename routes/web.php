@@ -67,6 +67,7 @@ route::view('schools', 'viewschools');
 route::get('/findschool', [SchoolController::class, 'find']);
 route::get('viewschools', [SchoolController::class, 'getSchools']);
 route::post('/create/school', [SchoolController::class, 'create']);
+route::get('/schools/delete/{id}', [SchoolController::class, 'delete']);
 
 //Category
 Route::post('/create/category', [CategoryController::class, 'create']);

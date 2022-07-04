@@ -56,4 +56,15 @@
        
 
 @endsection
+@else
+    <div class="row m-5">
+        <div class="row justify-content-center">
+            <div class="row cards">
+                <div class="col-md-10 m-auto alert alert-danger " >
+                    <h1 style="text-align: center; color: red">You are not authorized to view this page</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endif
