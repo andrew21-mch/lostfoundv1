@@ -3,8 +3,8 @@
 
 <style>
   .form{
-    border-style: solid;    
-    border-color: gray;
+    /* border-style: solid;     */
+    /* border-color: gray; */
     background-color:white;
     padding: 4%;
     margin-top: 20px;
@@ -56,7 +56,7 @@
                         </div>
 
                         <div class="row justify-content-center">
-                                <button type="submit" class="btn btn-primary justify-content-center" style="width:100px">
+                                <button type="submit" class="btn btn-primary justify-content-center w-25 mt-5" >
                                     {{ __('Login') }}
                                 </button>
                             </div>

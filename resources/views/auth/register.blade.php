@@ -2,14 +2,17 @@
 @section('content')
 <style>
 .form{
-    border-style: solid;    
-    border-color: gray;
+    /* border-style: solid;    
+    border-color: gray; */
     background-color:white;
     padding: 4%;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 100px;
     max-width: 700px;
     min-width: 260px;
+   }
+   .row{
+    margin-top: 25px;
    }
 </style>
 
@@ -17,7 +20,7 @@
     <div class="row justify-content-center m-auto">
         <div class="col-md-12 w-100">
             <form action="admin/register" method="post" enctype="multipart/form-data" class="form">
-                <h2 class="m-auto" style="text-align: center">REGISTER</h2><hr>
+                <h3 class="m-auto" style="text-align: center">Register</h3><hr>
                 @csrf
                         @if(Session::has("message"))
                         <div class="alert alert-danger">
@@ -118,7 +121,7 @@
 
                     <div class="form-group row justify-content-center ">
                         <div class="col-md-6 m-auto " style="">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary mt-5">
                                 {{ __('Register') }}
                             </button>
                         </div>
