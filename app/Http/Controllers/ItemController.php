@@ -19,6 +19,7 @@ class ItemController extends Controller
           $img = Image::make($file);
           $img->resize(300, 300);
           $img->save(public_path('images/'.$filename));
+          $img->destroy();
         }
         else{
           $file = $request->file('image');
@@ -27,7 +28,7 @@ class ItemController extends Controller
           $img->resize(300, 300);
           $img->save(public_path('images/'.$filename));
         }
-        
+
 
           
 
