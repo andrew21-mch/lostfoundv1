@@ -14,12 +14,8 @@ class ItemController extends Controller
       
       if($request->file('image')){
         if($request->file('image')->getSize() > 2000000){
-          $file = $request->file('image');
-          $filename= date('YmdHi').$file->getClientOriginalName();
-          $img = Image::make($file);
-          $img->resize(300, 300);
-          $img->save(public_path('images/'.$filename));
-          $img->destroy();
+          $request->session()->put('errorss', 'Image size is too large');
+          return redirect()->back();
         }
         else{
           $file = $request->file('image');
