@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Intervention\Image\Facades\Image;
 
 class ItemController extends Controller
 {
@@ -14,8 +13,7 @@ class ItemController extends Controller
       if($request->file('image')){
           $file = $request->file('image');
           $filename= date('YmdHi').$file->getClientOriginalName();
-          $file = Image::make($file)->resize(300, 300);
-          $file->save(public_path('images/'.$filename));
+          $file-> move(public_path('/images/'), $filename);
           
           $item = new Item();
           $item->itemname = $request->name;
@@ -73,3 +71,9 @@ class ItemController extends Controller
       return view('viewitems',['itemss'=>$items]);
     }
 }
+
+
+//$file = $request->file('image');
+          // $filename= date('YmdHi').$file->getClientOriginalName();
+          // $file = Image::make($file)->resize(300, 300);
+          // $file->save(public_path('images/'.$filename));
