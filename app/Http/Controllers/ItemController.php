@@ -6,14 +6,31 @@ use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Intervention\Image\Facades\Image;
+
 class ItemController extends Controller
 {
     public function create(Request $request){
       
       if($request->file('image')){
+        if($request->file('image')->getSize() > 2000000){
           $file = $request->file('image');
           $filename= date('YmdHi').$file->getClientOriginalName();
-          $file-> move(public_path('/images/'), $filename);
+          $img = Image::make($file);
+          $img->resize(300, 300);
+          $img->save(public_path('images/'.$filename));
+        }
+        else{
+          $file = $request->file('image');
+          $filename= date('YmdHi').$file->getClientOriginalName();
+          $img = Image::make($file);
+          $img->resize(300, 300);
+          $img->save(public_path('images/'.$filename));
+        }
+        
+
+          
+
           
           $item = new Item();
           $item->itemname = $request->name;
