@@ -6,7 +6,7 @@
                 <h3 class="m-3">{{$itemd[0]->itemname}}</h3>
                 <p> School: {{$itemd[0]->schoolname}} <br> 
                     Description: {{$itemd[0]->description}} <br>
-                    <a href="http://wa.me/{{$itemd[0]->contact}}" class="btn btn-success col-md-5 m-1" style="a:hover{color: white; background-color:yellow}">Contact</a> </a>
+                    <a href='http://wa.me/{{$itemd[0]->contact}}' class="btn btn-success col-md-5 m-1" style="a:hover{color: white; background-color:yellow}">Contact</a> </a>
                 </p>
 
             </div>
