@@ -16,13 +16,13 @@
             @csrf
             <h3 class="row justify-content-center">View Account Details</h3><hr>
             <input type="hidden" value="{{$admin->id}}" name="id">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             @if (Session::has('message'))
-                <div class="alert alert-success">
-                    <span>{{Session::get('message')}} <br>
-                    username: {{$admin->email}} <br>
-                    password: 'school'</span>
-                </div>
-                {{Session::forget("message")}}
+            <script>
+                swal("{{ Sessioh::get('status') }}");  
+            </script> 
+                {{Session::forget('message')}}
+            </div>
             @endif
             <div class="row justify-content-center mt-2">
                 <div class="form-group col-md-10 mt-2">
