@@ -19,7 +19,7 @@
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
             @if (Session::has('message'))
             <script>
-                swal("{{ Sessioh::get('status') }}");  
+                swal('{{ Session::get('status') }}');  
             </script> 
                 {{Session::forget('message')}}
             </div>
