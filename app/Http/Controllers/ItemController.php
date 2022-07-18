@@ -13,39 +13,48 @@ class ItemController extends Controller
     public function create(Request $request){
       
       if($request->file('image')){
-        if($request->file('image')->getSize() > 2000000){
-          $request->session()->put('errorss', 'Image size is too large');
-          return redirect()->back();
-        }
-        else{
-          $file = $request->file('image');
-          $filename= date('YmdHi').$file->getClientOriginalName();
-          $img = Image::make($file);
-          $img->resize(300, 300);
-          $img->save(public_path('images/'.$filename));
-        }
-
-
-          
-
-          
-          $item = new Item();
-          $item->itemname = $request->name;
-          $item->category_id = $request->category;
-          $item->owner_name = $request->owner;
-          $item->description = $request->desc;
-          $item->image_url = $filename;
-          $item->schoolid = $request->school;
-
-        if($item->save()){
-          $request->session()->put('message', 'Item Successfully Added');
-          return redirect('dashboard');
-        }
-        else{
-          $request->session()->put('message', 'Something went wrong please try ag');
-          return redirect()->back();
-        }
+      $size = $request->file('image')->getSize();
+      if($size > 2000000){
+        $request->session()->put('errorss', 'Image size is too large');
+        return redirect()->back();
       }
+      else {
+        return "uploading file..";
+      //   $file = $request->file('image');
+      // //     $filename= date('YmdHi').$file->getClientOriginalName();
+      // //     $img = Image::make($file);
+      // //     $img->resize(300, 300);
+      // //     $img->save(public_path('images/'.$filename));
+      }
+      }
+      //   if($request->file('image')->getSize() > 2000000){
+      //     
+      //   }
+      //   else{
+      //     
+      //   }
+
+
+          
+
+          
+      //     $item = new Item();
+      //     $item->itemname = $request->name;
+      //     $item->category_id = $request->category;
+      //     $item->owner_name = $request->owner;
+      //     $item->description = $request->desc;
+      //     $item->image_url = $filename;
+      //     $item->schoolid = $request->school;
+
+      //   if($item->save()){
+      //     $request->session()->put('message', 'Item Successfully Added');
+      //     return redirect('dashboard');
+      //   }
+      //   else{
+      //     $request->session()->put('message', 'Something went wrong please try ag');
+      //     return redirect()->back();
+      //   }
+      // }
 
       
 
