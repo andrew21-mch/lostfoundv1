@@ -6,46 +6,31 @@ use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use Intervention\Image\Facades\Image;
-
 class ItemController extends Controller
 {
     public function create(Request $request){
       
       if($request->file('image')){
-        if($request->file('image')->getSize() > 2000000){
-          $request->session()->put('errorss', 'Image size is too large');
-          return redirect()->back();
-        }
-        else{
           $file = $request->file('image');
           $filename= date('YmdHi').$file->getClientOriginalName();
-          $img = Image::make($file);
-          $img->resize(300, 300);
-          $img->save(public_path('images/'.$filename));
-        
-          $item = new Item();
-            $item->itemname = $request->name;
-            $item->category_id = $request->category;
-            $item->owner_name = $request->owner;
-            $item->description = $request->desc;
-            $item->image_url = $filename;
-            $item->schoolid = $request->school;
-
-          if($item->save()){
-            $request->session()->put('message', 'Item Successfully Added');
-            return redirect('dashboard');
-          }
-          else{
-            $request->session()->put('message', 'Something went wrong please try ag');
-            return redirect()->back();
-          }
-        }
+          $file-> move(public_path('/images/'), $filename);
           
-      }
-      else{
-        $request->session()->put('message', 'Something went wrong please try ag');
-        return redirect()->back();
+          $item = new Item();
+          $item->itemname = $request->name;
+          $item->category_id = $request->category;
+          $item->owner_name = $request->owner;
+          $item->description = $request->desc;
+          $item->image_url = $filename;
+          $item->schoolid = $request->school;
+
+        if($item->save()){
+          $request->session()->put('message', 'Item Successfully Added');
+          return redirect('dashboard');
+        }
+        else{
+          $request->session()->put('message', 'Something went wrong please try ag');
+          return redirect()->back();
+        }
       }
 
       
@@ -86,9 +71,3 @@ class ItemController extends Controller
       return view('viewitems',['itemss'=>$items]);
     }
 }
-
-
-//$file = $request->file('image');
-          // $filename= date('YmdHi').$file->getClientOriginalName();
-          // $file = Image::make($file)->resize(300, 300);
-          // $file->save(public_path('images/'.$filename));
