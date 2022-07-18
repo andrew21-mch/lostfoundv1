@@ -11,10 +11,14 @@ class ItemController extends Controller
     public function create(Request $request){
       
       if($request->file('image')){
+        if($request->file('image')->getSize() > 2000000){
+          $request->session()->put('message', 'Image size is too large');
+          return redirect()->back();
+        }else{
           $file = $request->file('image');
           $filename= date('YmdHi').$file->getClientOriginalName();
           $file-> move(public_path('/images/'), $filename);
-          
+
           $item = new Item();
           $item->itemname = $request->name;
           $item->category_id = $request->category;
@@ -30,6 +34,7 @@ class ItemController extends Controller
         else{
           $request->session()->put('message', 'Something went wrong please try ag');
           return redirect()->back();
+        }
         }
       }
 
