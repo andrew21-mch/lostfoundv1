@@ -13,7 +13,7 @@ class ItemController extends Controller
     public function create(Request $request){
       
       if($request->file('image')){
-        if($request->file('image')->getSize() > 2000000){
+        if($request->file('image')->getSize() > 20000){
           $request->session()->put('errorss', 'Image size is too large');
           return redirect()->back();
         }
