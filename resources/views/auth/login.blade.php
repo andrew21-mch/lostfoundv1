@@ -20,13 +20,17 @@
                     <form method="POST" action="/admin/login" class="form" >
                         <h2 class="m-auto" style="text-align: center">LOGIN</h2><hr>
                         @csrf
-                        @if(Session::has("message"))
-                        <div class="alert alert-success">
+                        @if(session('message'))
+                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                        <script>
+                            swal('session('message')')
+                        </script>
+                        {{-- <div class="alert alert-success">
                             <span>
                                 {{Session::get("message")}}
                             </span>
                             {{Session::forget("message")}}
-                        </div>
+                        </div> --}}
                         @endif
                         <div class="form-group row justify-content-center">
 

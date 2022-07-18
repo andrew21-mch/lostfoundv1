@@ -120,7 +120,7 @@ class AuthController extends Controller
             $request->session()->forget('role');
             return redirect('login');
         } else {
-            return redirect('login');
+            return redirect('login')->with('message', 'you just looged out');
         }
     }
 
