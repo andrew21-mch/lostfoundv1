@@ -25,7 +25,15 @@
         <div class="form-group col-md-10 mt-2" >
           <label for="desc">School Location</label>
           <input type="text" class="form-control" id="desc" name="desc" required >
-          @error ('coef')<span class="text-danger">{{ $message }}</span> @enderror
+          @error ('location')<span class="text-danger">{{ $message }}</span> @enderror
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-2">
+        <div class="form-group col-md-10 mt-2" >
+          <label for="contact">School Contact</label>
+          <input type="tel" class="form-control" id="contact" name="contact" required >
+          @error ('contact')<span class="text-danger">{{ $message }}</span> @enderror
         </div>
       </div>
       <div class="row justify-content-center">

@@ -48,7 +48,8 @@ class ItemController extends Controller
 
     }
 
-    function update(Request $request){
+    function update(Item $item, Request $request){
+
       
         
     }
@@ -73,7 +74,7 @@ class ItemController extends Controller
       $items = $item::where('itemid',$id)
       ->join('schools', 'schools.schoolid', 'items.schoolid')
       ->get();
-      return view('item', ['itemd'=>$items, 'contact'=> $items[0]->contact]);
+      return view('item', ['itemd'=>$items]);
     }
 
     public function viewall(Item $item){

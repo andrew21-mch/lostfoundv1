@@ -18,13 +18,15 @@ class SchoolController extends Controller
     public function create(Request $request){
         $valid = $request->validate([
             'name'=>'required',
-            'desc'=>'required'
+            'desc'=>'required',
+            'contact'=>'required'
         ]);
         
         if($valid){
             $school = new School();
             $school->schoolname = $request->name;
             $school->office_location = $request->desc;
+            $school->contact = $request->contact;
 
             if($school->save()){
                 $request->session()->put('message','School created successfully');
