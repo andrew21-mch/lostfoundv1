@@ -61,23 +61,23 @@ class ItemController extends Controller
       }
         
     }
-    function find(Request $request){
-        $searched_item = Item::where('itemname', 'like', '%'.$request->input('item').'%')
+    function find(Item $item, Request $request){
+        $searched_item = $item::where('itemname', 'like', '%'.$request->input('item').'%')
         ->orWhere('category_id', 'like', '%'.$request->input('item').'%')
         ->orWhere('owner_name', 'like', '%'.$request->input('item').'%')
         ->orWhere('description', 'like', '%'.$request->input('item').'%')
         ->get();
         return view('found',['searched_result'=>$searched_item]);
       }
-    public function view($id){
-      $item = Item::where('itemid',$id)
-            ->join('schools', 'schools.schoolid', 'items.schoolid')
-            ->get();
-      return view('item', ['itemd'=>$item]);
+    public function view(Item $item, $id){
+      $items = $item::where('itemid',$id)
+      ->join('schools', 'schools.schoolid', 'items.schoolid')
+      ->get();
+      return view('item', ['itemd'=>$items, 'contact'=> $items[0]->contact]);
     }
 
-    public function viewall(){
-      $items = Item::join('schools', 'items.schoolid', 'schools.schoolid')
+    public function viewall(Item $item){
+      $items = $item::join('schools', 'items.schoolid', 'schools.schoolid')
               ->get();
       return view('viewitems',['itemss'=>$items]);
     }
