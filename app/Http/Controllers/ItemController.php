@@ -9,10 +9,16 @@ use Illuminate\Support\Facades\DB;
 class ItemController extends Controller
 {
     public function create(Request $request){
+      $request->validate([
+        'image'=>'required',
+        'category'=>'required',
+        'desc'=>'required',
+        'school'=>'required'
+      ]);
       
       if($request->file('image')){
         if($request->file('image')->getSize() > 2000000){
-          $request->session()->put('message', 'Image size is too large');
+          $request->session()->put('errorss', 'Image size is too large');
           return redirect()->back();
         }else{
           $file = $request->file('image');
@@ -34,7 +40,7 @@ class ItemController extends Controller
         else{
           $request->session()->put('message', 'Something went wrong please try ag');
           return redirect()->back();
-        }
+          }
         }
       }
 
