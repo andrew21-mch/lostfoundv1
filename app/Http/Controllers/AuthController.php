@@ -127,10 +127,18 @@ class AuthController extends Controller
     //get all users
     public function viewaccount($id)
     {
-        $account = Admin::where('id', $id)
-        ->join('schools', 'admins.schoolid', 'schools.schoolid')
-        ->first();
-        return view('updateAccount', ['accountdetails' => $account]);
+        if(
+            $account = Admin::where('id', $id)
+            ->join('schools', 'admins.schoolid', 'schools.schoolid')
+            ->first())
+        {
+            return view('updateAccount', ['accountdetails' => $account]);
+        }
+        else{
+            $account = Admin::where('id', $id)->first();
+            return view('updateAccount', ['accountdetails' => $account]);
+        }
+        
     }
 
 
