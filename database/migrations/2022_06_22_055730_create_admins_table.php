@@ -19,11 +19,10 @@ class CreateAdminsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('password');
-            $table->int('schoolid');
+            $table->foreignId('schoolid')->references('id')->on('schools')->onDelete('cascade');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

@@ -25,7 +25,7 @@
             <div class="col-md-4">
               <p class="">{{$item->itemname}}</p>
               <p class="">{{$item->description}}</p>
-              <a href="/view/{{$item->itemid}}" class="btn btn-primary col-md-2" style="width: 70px">View More</a>
+              <a href="/view/{{$item->id}}" class="btn btn-primary col-md-2" style="width: 70px">View More</a>
             </div>
             <div class="row col-md-7">
                 <img src="images/{{$item->image_url}}" width="50px" height="50px">
@@ -52,7 +52,7 @@
                 <div class="col-md-4">
                   <p class="">{{$item->itemname}}</p>
                   <p class="">{{$item->description}}</p>
-                  <a href="/view/{{$item->itemid}}" class="btn btn-primary col-md-3 w-75">View More</a>
+                  <a href="/view/{{$item->id}}" class="btn btn-primary col-md-3 w-75">View More</a>
                 </div>
                 <div class="row col-md-7">
                     <img src="images/{{$item->image_url}}" width="50px" height="50px">

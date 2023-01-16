@@ -71,14 +71,14 @@ class ItemController extends Controller
         return view('found',['searched_result'=>$searched_item]);
       }
     public function view(Item $item, $id){
-      $items = $item::where('itemid',$id)
-      ->join('schools', 'schools.schoolid', 'items.schoolid')
+      $items = $item::find($id)
+      ->join('schools', 'schools.id', 'items.schoolid')
       ->get();
       return view('item', ['itemd'=>$items]);
     }
 
     public function viewall(Item $item){
-      $items = $item::join('schools', 'items.schoolid', 'schools.schoolid')
+      $items = $item::join('schools', 'items.schoolid', 'schools.id')
               ->get();
       return view('viewitems',['itemss'=>$items]);
     }
